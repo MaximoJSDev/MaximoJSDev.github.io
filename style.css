@@ -8,7 +8,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  /* overflow-x: hidden !important; */
+  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
 
@@ -111,22 +111,22 @@ body {
 }
 .home__title.h2 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2.5em;
   color: #f9feff;
 }
 .home__title.h1 {
-  font-size: 58px;
+  font-size: 3.625em;
   margin: 0;
   margin-top: -10px;
   color: #22d1ee;
 }
 .home__title.h3 {
   margin-top: -5px;
-  font-size: 23px;
+  font-size: 1.4375em;
   color: #e2f3f5;
 }
 .home__paragraph {
-  font-size: 23px;
+  font-size: 1.4375em;
   font-weight: 300;
   letter-spacing: 0.78px;
   margin-top: 25px;
@@ -141,7 +141,7 @@ body {
   align-items: center;
 }
 .fab {
-  font-size: 22px;
+  font-size: 1.375em;
   margin-right: 45px;
   padding: 8px;
   border-radius: 50%;
@@ -149,12 +149,21 @@ body {
   background-color: rgba(255, 255, 255, 0.06);
   color: #e2f3f5;
 }
+.fa-facebook-f:hover {
+  color: #3b5998;
+}
+.fa-twitter:hover {
+  color: #00acee;
+}
+.fa-instagram:hover {
+  color: #C13584;
+}
+.social .fab:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+}
 .fa-facebook-f {
   padding: 8px 12px;
-}
-.social i:hover {
-  transform: scale(1.075);
-  cursor: pointer;
 }
 .home__container-img {
   position: relative;
@@ -202,11 +211,6 @@ body {
   color: #fff;
   border-radius: 30px;
   padding: 20px;
-  /* background-image: linear-gradient(
-    93.64deg,
-    rgba(14, 21, 58, 0.178) -9.83%,
-    rgba(41, 41, 41, 0.0198) 111.81%
-  ); */
   margin: 0 43px 60px;
   z-index: 100;
 }
@@ -246,6 +250,7 @@ body {
   margin: 49px 0 60px;
 }
 .services__information__title {
+  text-align: center;
   font-style: normal;
   font-weight: bold;
   font-size: 29px;
@@ -324,7 +329,7 @@ body {
 /* -----------------------------------------------------------------------------------------------------------------  Contact  ------------------------------------
 --------------------------------------------------------------------------------*/
 .contact {
-  min-height: 75vh;
+  position: relative;
   background-image: radial-gradient(
     61.49% 194.54% at 50% 50%,
     #060a1a 0%,
@@ -355,15 +360,15 @@ body {
   background-color: #f8f8f8;
 }
 .contact__send {
-  background-color: #22d1ee;
   outline: none;
   border: none;
   margin-top: 35px;
   padding: 14px 80px;
   border-radius: 7px;
-  cursor: pointer;
 }
 #mailto{
+  position: absolute;
+  bottom: 10px;
   opacity: 0;
 }
 
@@ -456,4 +461,84 @@ span:nth-child(6) {
   left: initial;
   animation-delay: 2;
   animation-duration: 10s;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------  Screen  ------------------------------------
+--------------------------------------------------------------------------------*/
+@media (max-width: 1215px) {
+  .nav {
+    padding-top: 8px;
+  }
+  .home {
+    padding: 45px 20px;
+    flex-wrap: wrap;
+    flex-direction: column-reverse
+  }
+  .home__text {
+    font-size: 14px;
+  }
+  .home__paragraph {
+    margin-top: 20px;
+    margin-bottom: 19px;
+    line-height: 30px;
+  }
+  .home__container-img__img {
+    width: 300px;
+    height: 320px;
+  }
+}
+@media (max-width: 750px) {
+  .home {
+    justify-content: space-evenly;
+  }
+  .home__text {
+    font-size: 11.3px;
+  }
+  .home__paragraph {
+    line-height: 25px;
+    margin-top: 13px;
+  }
+  .home__container-img__img {
+    width: 270px;
+    height: 290px;
+  }
+}
+@media (max-width: 620px) {
+  .home {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .home__title.h1 {
+    font-size: 3.1em;
+  }
+}
+@media (max-width: 510px) {
+  .home__title.h2 {
+    font-size: 2.15em;
+  }
+  .home__title.h1 {
+    font-size: 2.6em;
+  }
+  .titles {
+    font-size: 41px;
+    margin: 0 0 20px;
+  }
+  .titles::after {
+    width: 130px;
+  }
+  .contact__input {
+    width: 80%;
+  }
+}
+@media (max-width: 420px) {
+  .home__text {
+    font-size: 10px;
+    padding: 20px;
+  }
+  .home__title.h1 {
+    margin-top: -1px;
+    margin-bottom: 6px;
+    white-space: inherit;
+    line-height: 23px;
+  }
 }
