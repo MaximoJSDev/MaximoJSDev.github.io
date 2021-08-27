@@ -319,6 +319,7 @@ body {
   color: #e2f3f5;
 }
 .projects__card__title {
+  white-space: nowrap;
   font-size: 2.5em;
   letter-spacing: 0.5px;
   font-weight: 500;
@@ -620,11 +621,20 @@ span:nth-child(5) {
     font-size: 13px;
     line-height: inherit;
   }
+  .services__information__img {
+    height: 220px;
+    margin-bottom: 30px;
+  }
+  .projects__card__paragraph {
+    font-size: 17.5px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
   .projects__card__title {
     font-size: 1.85em;
   }
   .projects__card__btn {
-    font-size: 18px;
+    font-size: 17px;
   }
   .contact__form__title {
     font-size: 20px;
