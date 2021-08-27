@@ -151,8 +151,8 @@ body {
 .fa-instagram:hover {
   color: #c13584;
 }
-.social .fab:hover {
-  transform: scale(1.08);
+.social .svg-inline--fa:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 .home__container-img {
