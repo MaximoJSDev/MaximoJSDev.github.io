@@ -87,12 +87,6 @@ body {
 }
 .home__text {
   padding: 33px 35px 38px;
-  background-image: linear-gradient(
-    93.64deg,
-    rgb(25 28 47 / 18%) -9.83%,
-    rgba(41, 41, 41, 0.1) 111.81%
-  );
-  border-radius: 33px;
   z-index: 200;
 }
 .home__title {
@@ -169,17 +163,16 @@ body {
 .home__container-img::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
+  width: 108%;
   height: 100%;
   background-image: linear-gradient(
     342deg,
     rgba(58, 14, 14, 0.2),
-    rgba(61, 91, 241, 0.221)
+    rgba(61, 91, 241, 0.35)
   );
   border-radius: 50%;
-  filter: blur(30px);
+  filter: blur(25px);
 }
 .services {
   padding-top: 100px;
