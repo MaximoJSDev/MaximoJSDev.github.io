@@ -10,6 +10,7 @@ html {
 body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
+  background-color: #070707;
 }
 ::-webkit-scrollbar {
   position: absolute;
@@ -257,13 +258,15 @@ body {
   color: #e2f3f5;
   margin: 0;
 }
-/* .services__information__view-more {
+.services__information__view-more {
   font-size: 21px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 300;
   color: #fff;
   margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 .services__information__view-more::after {
   content: "➜";
@@ -280,7 +283,19 @@ body {
 .services__information__view-more:hover::after {
   margin-left: 20px;
   
-} */
+}
+.technologies {
+  font-size: 1.75rem;
+  text-align: start;
+}
+.title-alert {
+  font-size: 2.65rem !important;
+  padding: 0.75em 0 0.8em 0 !important;
+}
+.confirm-btn {
+  font-size: 19px !important;
+  padding: 10px 50px !important;
+}
 .projects {
   padding: 100px 50px 0;
   min-height: 95vh;
@@ -638,10 +653,6 @@ span:nth-child(5) {
   .home__paragraph {
     letter-spacing: 0;
   }
-  .home__container-img__img {
-    width: 238px;
-    height: 250px;
-  }
   .titles {
     font-size: 41px;
     margin: 0 0 20px;
@@ -654,6 +665,10 @@ span:nth-child(5) {
   }
   .services__information__img {
     height: 220px;
+  }
+  .services__information__paragraph {
+    line-height: 26px;
+    max-width: 335px;
   }
   .projects__card__paragraph {
     font-size: 17.5px;
@@ -687,7 +702,7 @@ span:nth-child(5) {
     line-height: 23px;
   }
   .home__title.h2 {
-    font-size: 2em;
+    font-size: 2.1em;
   }
   .projects__grid {
     grid-template-columns: 310px;
