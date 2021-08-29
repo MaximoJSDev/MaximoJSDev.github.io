@@ -168,8 +168,8 @@ body {
   height: 100%;
   background-image: linear-gradient(
     342deg,
-    rgba(58, 14, 14, 0.2),
-    rgba(61, 91, 241, 0.35)
+    rgba(58, 14, 14, 0.165),
+    rgba(61, 91, 241, 0.31)
   );
   border-radius: 50%;
   filter: blur(25px);
@@ -248,7 +248,7 @@ body {
   color: #22d1ee;
 }
 .services__information__paragraph {
-  max-width: 442px;
+  max-width: 450px;
   font-weight: 300;
   font-size: 1.4em;
   text-align: center;
@@ -257,6 +257,30 @@ body {
   color: #e2f3f5;
   margin: 0;
 }
+/* .services__information__view-more {
+  font-size: 21px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 30px;
+}
+.services__information__view-more::after {
+  content: "➜";
+  color: #3d5af1;
+  padding: 5px 8px;
+  margin-left: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.044);
+  transition: 0.6s;
+}
+.services__information__view-more:hover {
+  color: rgb(216, 216, 216);
+}
+.services__information__view-more:hover::after {
+  margin-left: 20px;
+  
+} */
 .projects {
   padding: 100px 50px 0;
   min-height: 95vh;
@@ -323,6 +347,7 @@ body {
   font-weight: 300;
   margin: 10px 0 30px;
   line-height: 29px;
+  color: #e2f3f5;
 }
 .projects__card__btn {
   font-size: 20px;
