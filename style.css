@@ -500,13 +500,13 @@ body {
 }
 .star4 {
   top: -1em;
-  right: -28em;
+  right: -28.5em;
   left: initial;
   animation-delay: 4s;
   animation-duration: 15s;
 }
 .star5 {
-  top: 51em;
+  top: 53em;
   right: -1em;
   left: initial;
   animation-delay: 9s;
