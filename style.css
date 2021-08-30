@@ -403,11 +403,10 @@ body {
 }
 .contact__form__title {
   margin-top: 18px;
-  color: #fff;
   font-size: 28px;
   font-weight: 300;
   width: 70%;
-  color: var(--colorText);
+  color: #f8f8f8;
 }
 .contact__input {
   width: 70%;
@@ -434,7 +433,7 @@ body {
   bottom: 10px;
   opacity: 0;
 }
-.stars {
+.stars-content {
   position: absolute;
   top: 0;
   left: 0;
@@ -443,7 +442,7 @@ body {
   z-index: 100;
   overflow-x: clip;
 }
-.stars span {
+.star {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -453,10 +452,10 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.527),
     0 0 12px rgba(255, 255, 255, 0.719), 0 0 30px rgb(255, 0, 0);
-  animation: stars 3s linear 1s infinite;
+  animation: stars 4s linear 2s infinite;
   transition: 0.6s;
 }
-span::before {
+.star::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -474,44 +473,51 @@ span::before {
     opacity: 1;
   }
   100% {
-    transform: rotate(315deg) translate(-1500px);
+    transform: rotate(315deg) translate(-1600px);
     opacity: 0;
   }
 }
-span:nth-child(1) {
-  top: -0.625em;
-  right: 9.375em;
+.star1 {
+  top: -1em;
+  right: 42em;
   left: initial;
   animation-delay: 5s;
-  animation-duration: 16.5s;
+  animation-duration: 16s;
 }
-span:nth-child(2) {
-  top: 6.25em;
-  right: -10em;
-  left: initial;
-  animation-delay: 1s;
-  animation-duration: 20s;
-}
-span:nth-child(3) {
-  top: -0.625em;
-  right: 25em;
-  left: initial;
-  animation-delay: 2s;
-  animation-duration: 15.5s;
-}
-span:nth-child(4) {
-  top: 40em;
-  right: -7.5em;
-  left: initial;
-  animation-delay: 4s;
-  animation-duration: 23s;
-}
-span:nth-child(5) {
-  top: 71.25em;
-  right: -6.25em;
+.star2 {
+  top: -1em;
+  right: 19em;
   left: initial;
   animation-delay: 9s;
-  animation-duration: 12s;
+  animation-duration: 11s;
+}
+.star3 {
+  top: -1em;
+  right: -2.5em;
+  left: initial;
+  animation-delay: 2s;
+  animation-duration: 16s;
+}
+.star4 {
+  top: -1em;
+  right: -28em;
+  left: initial;
+  animation-delay: 4s;
+  animation-duration: 15s;
+}
+.star5 {
+  top: 51em;
+  right: -1em;
+  left: initial;
+  animation-delay: 9s;
+  animation-duration: 15.4s;
+}
+.star6 {
+  top: 90em;
+  right: -1em;
+  left: initial;
+  animation-delay: 9s;
+  animation-duration: 13s;
 }
 .btn-responsive {
   display: none;
