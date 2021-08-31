@@ -39,16 +39,31 @@ body {
   padding: 35px 75px;
   transition: 0.6s;
   z-index: 10000;
+  animation: navbar 0.65s ease-in 0.8s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+@keyframes navbar {
+  0% {
+    transform: translateY(-100px);
+    visibility:visible;
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0);
+    visibility:visible;
+    opacity: 1;
+  }
 }
 .nav__logo {
   height: 65px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover;  
 }
 .nav__menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
 }
 .nav__menu__li {
   list-style: none;
