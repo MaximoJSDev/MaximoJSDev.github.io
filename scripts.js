@@ -1,9 +1,13 @@
 let oldBtn;
+body = document.body;
 const $nav = document.querySelector(".nav");
 const $btnResponsive = document.querySelector(".btn-responsive");
 const $menu = document.querySelector(".nav__menu");
 const $btn = document.querySelectorAll(".nav__menu__a");
-const $viewMore = document.querySelectorAll(".services__information__view-more")
+const $viewMore = document.querySelectorAll(
+  ".services__information__view-more"
+);
+const $modal = document.querySelector(".services__tecnologies");
 const $submit = document.querySelector(".contact__form");
 const $btnMailTo = document.getElementById("mailto");
 window.addEventListener("scroll", function () {
@@ -23,31 +27,12 @@ $btnResponsive.addEventListener("click", () => {
   $menu.classList.toggle("menuResponsive");
 });
 
-$viewMore.forEach(item => {
+$viewMore.forEach((item) => {
   item.addEventListener("click", () => {
-    Swal.fire({
-      icon: "question",
-      title: 'Tecnologías',
-      html: //html 
-      `
-      <h6 class="technologies">✅ HTML</h6>
-      <h6 class="technologies">✅ CSS</h6>
-      <h6 class="technologies">✅ JavaScript</h6>
-      <h6 class="technologies">✅ Vue JS</h6>
-      <h6 class="technologies">✅ Bootstrap</h6>
-      <h6 class="technologies">✅ WordPress</h6>
-      <h6 class="technologies">✅ Figma</h6>
-      `,
-      padding: "1.2rem",
-      background: "#fff",
-      confirmButtonColor: "#3d5af1",
-      customClass: {
-        title: 'title-alert',
-        confirmButton: 'confirm-btn',
-      }
-    })
-})
-})
+    $modal.classList.add("active");
+    body.classList.add("no-scroll");
+  });
+});
 
 $submit.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
@@ -60,7 +45,7 @@ function handleSubmit(event) {
     )}&body=${form.get("message")}`
   );
   $btnMailTo.click();
-        inputName = document.getElementById('name').value = ""
-        inputEmail = document.getElementById('email').value = ""
-        inputMessage = document.getElementById('message').value = ""
+  inputName = document.getElementById("name").value = "";
+  inputEmail = document.getElementById("email").value = "";
+  inputMessage = document.getElementById("message").value = "";
 }
