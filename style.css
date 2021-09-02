@@ -252,8 +252,8 @@ body {
   z-index: 11111;
 }
 .modal {
-  width: 600px;
-  height: 700px;
+  width: 37.5em;
+  height: 43.75em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -642,6 +642,12 @@ body {
     -webkit-box-reflect: below 2px
       linear-gradient(transparent, transparent, transparent, #04060f25);
   }
+  .bakckground-modal {
+    font-size: 12px;
+  }
+  .modal__lista {
+    row-gap: 15px;
+  }
 }
 @media (max-width: 785px) {
   .nav {
@@ -730,6 +736,13 @@ body {
     font-size: 3.1em;
     line-height: 43px;
   }
+  .bakckground-modal {
+    font-size: 10px;
+  }
+  .modal {
+    max-width: 36.5em;
+    height: 50em;
+  }
   .services__information {
     font-size: 14px;
   }
@@ -808,6 +821,9 @@ body {
   }
   .home__title.h2 {
     font-size: 2.1em;
+  }
+  .bakckground-modal {
+    font-size: 9px;
   }
   .projects__grid {
     grid-template-columns: 310px;
