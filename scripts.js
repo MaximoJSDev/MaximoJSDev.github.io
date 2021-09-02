@@ -55,4 +55,4 @@ function handleSubmit(event) {
   inputName = document.getElementById("name").value = "";
   inputEmail = document.getElementById("email").value = "";
   inputMessage = document.getElementById("message").value = "";
-}
+} 
