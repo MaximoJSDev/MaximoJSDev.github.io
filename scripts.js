@@ -1,19 +1,18 @@
 let oldBtn;
-body = document.body;
 const $nav = document.querySelector(".nav");
 const $btnResponsive = document.querySelector(".btn-responsive");
 const $menu = document.querySelector(".nav__menu");
-const $btn = document.querySelectorAll(".nav__menu__a");
-const $viewMore = document.querySelectorAll(
-  ".services__information__view-more"
-);
-const $modal = document.querySelector(".services__tecnologies");
+const $btnNav = document.querySelectorAll(".nav__menu__a");
+const $viewMore = document.querySelectorAll(".services__information__view-more");
+const backModal = document.querySelector(".bakckground-modal");
+const $modal = document.querySelector(".modal");
+const $btnModal = document.querySelector(".modal__btn");
 const $submit = document.querySelector(".contact__form");
 const $btnMailTo = document.getElementById("mailto");
 window.addEventListener("scroll", function () {
   $nav.classList.toggle("sticky", window.scrollY > 1);
 });
-$btn.forEach((btn) => {
+$btnNav.forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.classList.add("active");
     if (oldBtn !== undefined) {
@@ -29,8 +28,16 @@ $btnResponsive.addEventListener("click", () => {
 
 $viewMore.forEach((item) => {
   item.addEventListener("click", () => {
-    $modal.classList.add("active");
-    body.classList.add("no-scroll");
+    $modal.classList.add("active-modal");
+    backModal.classList.add("back-modal-active");
+  });
+  $btnModal.addEventListener("click", () => {
+    $modal.classList.remove("active-modal");
+    backModal.classList.remove("back-modal-active");
+  });
+  backModal.addEventListener("click", () => {
+    $modal.classList.remove("active-modal");
+    backModal.classList.remove("back-modal-active");
   });
 });
 

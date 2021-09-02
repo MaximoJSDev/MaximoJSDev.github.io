@@ -46,24 +46,24 @@ body {
 @keyframes navbar {
   0% {
     transform: translateY(-100px);
-    visibility:visible;
+    visibility: visible;
     opacity: 0;
   }
   100% {
     transform: translateY(0);
-    visibility:visible;
+    visibility: visible;
     opacity: 1;
   }
 }
 .nav__logo {
   height: 65px;
   border-radius: 50%;
-  object-fit: cover;  
+  object-fit: cover;
 }
 .nav__menu {
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 .nav__menu__li {
   list-style: none;
@@ -166,7 +166,7 @@ body {
 .fa-instagram:hover {
   color: #c13584;
 }
-.social a:hover .svg-inline--fa{
+.social a:hover .svg-inline--fa {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -237,7 +237,21 @@ body {
 .services .titles {
   margin-bottom: 25px;
 }
-.services__tecnologies {
+.bakckground-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  transition: background-color 0.3s;
+}
+.back-modal-active {
+  background-color: #0000009f;
+  z-index: 11111;
+}
+.modal {
   width: 600px;
   height: 700px;
   display: flex;
@@ -247,7 +261,6 @@ body {
   position: fixed;
   top: 0;
   bottom: 0;
-
   margin: auto;
   color: #fff;
   border-radius: 15px;
@@ -258,38 +271,40 @@ body {
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
-  transition: 0.6s;
+  transform: scale(0.35);
+  transition: 0.3s;
 }
-.services__tecnologies.active {
+.active-modal {
   opacity: 1;
+  transform: scale(1);
   visibility: visible;
+  transition: 0.3s;
 }
-.no-scroll {
-  overflow: hidden;
-}
-.services__tecnologies__title {
+.modal__title {
   font-size: 4em;
   padding-bottom: 10px;
   background-image: linear-gradient(to right, #3249c1, #3d5af1);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  letter-spacing: 1px
+  letter-spacing: 1px;
 }
-.service__tecnologies__lista {
-  list-style: none;  display: flex;
+.modal__lista {
+  list-style: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   row-gap: 20px;
   padding-left: 0;
 }
-.services__tecnologies__tec {
+.modal__tec {
   font-weight: 500;
   font-size: 2em;
   letter-spacing: 1px;
   color: #000;
 }
-.services__tecnologies__btn {
+.modal__btn {
   font-size: 19px;
   color: #fff;
   border: none;
@@ -364,7 +379,6 @@ body {
 }
 .services__information__view-more:hover::after {
   margin-left: 20px;
-  
 }
 .technologies {
   font-size: 1.75rem;
