@@ -3,7 +3,9 @@ const $nav = document.querySelector(".nav");
 const $btnResponsive = document.querySelector(".btn-responsive");
 const $menu = document.querySelector(".nav__menu");
 const $btnNav = document.querySelectorAll(".nav__menu__a");
-const $viewMore = document.querySelectorAll(".services__information__view-more");
+const $viewMore = document.querySelectorAll(
+  ".services__information__view-more"
+);
 const backModal = document.querySelector(".bakckground-modal");
 const $modal = document.querySelector(".modal");
 const $btnModal = document.querySelector(".modal__btn");
@@ -26,20 +28,27 @@ $btnResponsive.addEventListener("click", () => {
   $menu.classList.toggle("menuResponsive");
 });
 
+window.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (e.target == backModal) {
+    removeModal();
+  }
+});
 $viewMore.forEach((item) => {
   item.addEventListener("click", () => {
     $modal.classList.add("active-modal");
     backModal.classList.add("back-modal-active");
   });
   $btnModal.addEventListener("click", () => {
-    $modal.classList.remove("active-modal");
-    backModal.classList.remove("back-modal-active");
-  });
-  backModal.addEventListener("click", () => {
-    $modal.classList.remove("active-modal");
-    backModal.classList.remove("back-modal-active");
+    removeModal();
   });
 });
+const removeModal = () => {
+  $modal.classList.remove("active-modal");
+  setTimeout(() => {
+    backModal.classList.remove("back-modal-active");
+  }, 300);
+};
 
 $submit.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
@@ -52,7 +61,7 @@ function handleSubmit(event) {
     )}&body=${form.get("message")}`
   );
   $btnMailTo.click();
-  inputName = document.getElementById("name").value = "";
-  inputEmail = document.getElementById("email").value = "";
-  inputMessage = document.getElementById("message").value = "";
-} 
+  inputName = document.getElementById("name").value.reset();
+  inputEmail = document.getElementById("email").value.reset();
+  inputMessage = document.getElementById("message").value.reset();
+}
