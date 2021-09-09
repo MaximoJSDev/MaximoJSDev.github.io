@@ -499,7 +499,8 @@ body {
   color: #f8f8f8;
 }
 .contact__input {
-  width: 70%;
+  min-width: 70%;
+  max-width: 70%;
   padding: 15px;
   background-color: #f8f8f8;
   outline: none;
@@ -509,6 +510,7 @@ body {
 }
 .msg {
   height: 145px;
+  min-height: 55px;
   background-color: #f8f8f8;
 }
 .contact__send {
@@ -803,7 +805,8 @@ body {
     width: 80%;
   }
   .contact__input {
-    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
   }
 }
 @media (max-width: 450px) {

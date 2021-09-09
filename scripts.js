@@ -36,18 +36,18 @@ const removeModal = () => {
   $modal.classList.remove("active-modal");
   setTimeout(() => backModal.classList.remove("back-modal-active"), 280);
 };
-$submit.addEventListener("submit", handleSubmit);
-function handleSubmit(event) {
-  event.preventDefault();
-  const form = new FormData(this);
-  $btnMailTo.setAttribute(
-    "href",
-    `mailto:maximilianocm06@gmail.com?subject=${form.get("name")}  |  ${form.get(
-      "email"
-    )}&body=${form.get("message")}`
-  );
-  $btnMailTo.click();
-  inputName = document.getElementById("name").value.reset();
-  inputEmail = document.getElementById("email").value.reset();
-  inputMessage = document.getElementById("message").value.reset();
-}
+// $submit.addEventListener("submit", handleSubmit);
+// function handleSubmit(event) {
+//   event.preventDefault();
+//   const form = new FormData(this);
+//   $btnMailTo.setAttribute(
+//     "href",
+//     `mailto:maximilianocm06@gmail.com?subject=${form.get("name")}  |  ${form.get(
+//       "email"
+//     )}&body=${form.get("message")}`
+//   );
+//   $btnMailTo.click();
+//   inputName = document.getElementById("name").value.reset();
+//   inputEmail = document.getElementById("email").value.reset();
+//   inputMessage = document.getElementById("message").value.reset();
+// }
