@@ -49,7 +49,7 @@ async function handleSubmit(event) {
     },
   });
   if (response.ok) {
-    const contactWindow = document.querySelector(".contact__window").classList.add("active");
+    const contactWindow = document.querySelector(".contact__window__span").classList.add("active");
     this.reset();
   }
 }

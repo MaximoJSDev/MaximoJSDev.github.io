@@ -83,7 +83,7 @@ body {
   background-color: var(--colorSecondary);
 }
 .sticky {
-  background-color: rgba(0, 0, 0, 0.86);
+  background-color: rgba(0, 0, 0, 0.87);
   backdrop-filter: blur(1px);
   padding: 5px 60px;
 }
@@ -472,9 +472,13 @@ body {
   box-shadow: rgba(0, 247, 255, 0.75) 1px 30px 25px -13px;
 }
 .contact {
-  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 80vh;
   position: relative;
-  padding: 80px 0 65px;
+  padding: 80px 0 90px;
   position: relative;
   background-image: radial-gradient(
     61.49% 194.54% at 50% 50%,
@@ -483,6 +487,10 @@ body {
     #03050c 100%
   );
   overflow: hidden;
+}
+.contact__window {
+  position: relative;
+  z-index: 101;
 }
 .contact__window__span {
   position: fixed;
@@ -497,10 +505,9 @@ body {
   opacity: 0;
   transition: 0.6s;
   margin-right: 15%;
-  z-index: 100;
 }
 .contact__window__span.active {
-  animation: emailSend 6.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  animation: emailSend 6.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 @keyframes emailSend {
   0%,
@@ -519,6 +526,7 @@ body {
   }
 }
 .contact__form {
+  width: 100%;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -552,13 +560,8 @@ body {
   outline: none;
   border: none;
   margin-top: 35px;
-  padding: 14px 100px;
+  padding: 15px 100px;
   border-radius: 7px;
-}
-#mailto {
-  position: absolute;
-  bottom: 10px;
-  opacity: 0;
 }
 .stars-content {
   position: absolute;
@@ -834,7 +837,7 @@ body {
   }
   .projects__card__btn {
     font-size: 17px;
-    padding: 14px 30px;
+    padding: 13px 50px;
   }
   .contact__window__span {
     font-size: 15px;
@@ -845,9 +848,13 @@ body {
     width: 80%;
   }
   .contact__input {
+    font-size: 18px;
     min-width: 80%;
     max-width: 80%;
-    min-height: 52px;
+  }
+  .contact__input:not(.msg) {
+    min-height: 50px;
+    height: 50px;
   }
 }
 @media (max-width: 450px) {
