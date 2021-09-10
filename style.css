@@ -39,7 +39,7 @@ body {
   padding: 35px 75px;
   transition: 0.6s;
   z-index: 10000;
-  animation: navbar 1.2s ease-in;
+  animation: navbar 1.1s ease-in;
   visibility: hidden;
   animation-fill-mode: forwards;
 }
@@ -265,8 +265,6 @@ body {
   color: #fff;
   border-radius: 15px;
   background: #f1f1f1;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   text-align: center;
   z-index: 1000;
   visibility: hidden;
@@ -474,7 +472,8 @@ body {
   box-shadow: rgba(0, 247, 255, 0.75) 1px 30px 25px -13px;
 }
 .contact {
-  min-height: 85vh;
+  min-height: 86vh;
+  position: relative;
   padding: 80px 0 40px;
   position: relative;
   background-image: radial-gradient(
@@ -483,6 +482,41 @@ body {
     #050712 0.01%,
     #03050c 100%
   );
+  overflow: hidden;
+}
+.contact__window__span {
+  position: fixed;
+  right: -12em;
+  top: 125px;
+  font-size: 20px;
+  background-image: linear-gradient(to right, #3249c1, #3d5af1);
+  padding: 16px 16px;
+  border-radius: 5px;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.6s;
+  margin-right: 15%;
+  z-index: 100;
+}
+.contact__window__span.active {
+  animation: emailSend 6.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+@keyframes emailSend {
+  0%,
+  95%,
+  100% {
+    right: -12em;
+    visibility: hidden;
+    opacity: 0;
+  }
+  38%,
+  50%,
+  75% {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+  }
 }
 .contact__form {
   font-size: 20px;
@@ -501,6 +535,7 @@ body {
 .contact__input {
   min-width: 70%;
   max-width: 70%;
+  min-height: 60px;
   padding: 15px;
   background-color: #f8f8f8;
   outline: none;
@@ -544,7 +579,7 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.527),
     0 0 12px rgba(255, 255, 255, 0.719), 0 0 30px rgb(255, 0, 0);
-  animation: stars 4s linear 2s infinite;
+  animation: stars 4s linear 1s infinite;
   transition: 0.6s;
 }
 .star::before {
@@ -799,6 +834,11 @@ body {
   }
   .projects__card__btn {
     font-size: 17px;
+    padding: 14px 30px;
+  }
+  .contact__window__span {
+    font-size: 15px;
+    margin-right: 12%;
   }
   .contact__form__title {
     font-size: 20px;
@@ -807,6 +847,7 @@ body {
   .contact__input {
     min-width: 80%;
     max-width: 80%;
+    min-height: 52px;
   }
 }
 @media (max-width: 450px) {

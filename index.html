@@ -339,8 +339,11 @@
       </div>
     </main>
     <footer class="contact" id="contact">
+      <div class="contact__window">
+        <span class="contact__window__span">Correo enviado con exito!</span>
+      </div>
       <h2 class="titles">Contáctame</h2>
-      <form method="post" action="email.php" class="contact__form">
+      <form action="https://formspree.io/f/mjvjjqgw" method="POST" class="contact__form">
         <label class="contact__form__title"
           >¿Tienes alguna página en mente? Envíame un email y nos ponemos en
           contacto 🧑‍💻</label
@@ -373,13 +376,12 @@
         <button
           type="submit"
           class="projects__card__btn contact__send"
-          required
         >
           Enviar
         </button>
       </form>
-      <!-- <a id="mailto" href="mailto:maximilianocm06@gmail.com">mail</a> -->
     </footer>
+
     <script src="scripts.js"></script>
   </body>
 </html>
