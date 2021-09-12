@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-*::selection {
+::selection {
   background-color: #3d5bf159;
 }
 :root {
@@ -95,7 +95,7 @@ body {
   justify-content: space-around;
   padding-top: 10px;
   background-color: rgb(16, 22, 56);
-  background: radial-gradient(50% 50% at 50% 50%, #101638 0%, #000 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #101638 0%, #000000 100%);
 }
 .home::after {
   content: "";
@@ -157,18 +157,18 @@ body {
   color: var(--colorText);
   transition: 0.4s;
 }
-.fa-linkedin-in:hover {
+.social__a:hover .svg-inline--fa {
+  transform: scale(1.105);
+  cursor: pointer;
+}
+.social__a:hover .fa-linkedin-in {
   color: #0e76a8;
 }
-.fa-twitter:hover {
+.social__a:hover .fa-twitter {
   color: #00acee;
 }
-.fa-instagram:hover {
+.social__a:hover .fa-instagram {
   color: #c13584;
-}
-.social a:hover .svg-inline--fa {
-  transform: scale(1.1);
-  cursor: pointer;
 }
 .home__container-img {
   position: relative;
@@ -380,14 +380,6 @@ body {
 .technologies {
   font-size: 1.75rem;
   text-align: start;
-}
-.title-alert {
-  font-size: 2.65rem !important;
-  padding: 0.75em 0 0.8em 0 !important;
-}
-.confirm-btn {
-  font-size: 19px !important;
-  padding: 10px 50px !important;
 }
 .projects {
   padding: 100px 50px 0;
@@ -837,7 +829,7 @@ body {
   }
   .projects__card__btn {
     font-size: 17px;
-    padding: 13px 50px;
+    padding: 13px 25px;
   }
   .contact__window__span {
     font-size: 15px;
@@ -855,6 +847,9 @@ body {
   .contact__input:not(.msg) {
     min-height: 50px;
     height: 50px;
+  }
+  .contact__send {
+    padding: 13px 50px;
   }
 }
 @media (max-width: 450px) {
