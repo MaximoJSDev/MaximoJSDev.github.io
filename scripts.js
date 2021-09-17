@@ -2,9 +2,7 @@ let oldBtn;
 const $nav = document.querySelector(".nav");
 const $btnResponsive = document.querySelector(".btn-responsive");
 const $menu = document.querySelector(".nav__menu");
-const $viewMore = document.querySelectorAll(
-  ".services__information__view-more"
-);
+const $viewMore = document.querySelectorAll(".services__information__view-more");
 const backModal = document.querySelector(".bakckground-modal");
 const $modal = document.querySelector(".modal");
 const $modalTitle = document.querySelector(".modal__title");
@@ -46,7 +44,7 @@ $viewMore.forEach((item) => {
       $modalTitle.textContent = "Diseño UX/UI";
       $subTitle.textContent = "Tecnologías:";
       $technologies[0].innerHTML = "<span>✔️</span> Figma";
-      $technologies[1].innerHTML = "<span>✔️</span> Adobe XD";
+      $technologies[1].innerHTML = "<span>✔️</span> InVision";
       $technologies[2].innerHTML = "<span>✔️</span> Webflow";
       $technologies[3].innerHTML = "<span>✔️</span> Gimp";
       $technologies[4].textContent = "";
@@ -56,8 +54,8 @@ $viewMore.forEach((item) => {
       $subTitle.textContent = "¿Qué ofrecemos?";
       $technologies[0].innerHTML = "<span>✔️</span> Renovación de Hosting";
       $technologies[1].innerHTML = "<span>✔️</span> Rapidez de carga en la página web";
-      $technologies[2].innerHTML = "<span>✔️</span> Cambios en la página web";
-      $technologies[3].innerHTML = "<span>✔️</span> Corrección de errores";
+      $technologies[2].innerHTML = "<span>✔️</span> Corrección de errores";
+      $technologies[3].innerHTML = "<span>✔️</span> Cambios en la página web";
       $technologies[4].textContent = "";
     }
   });

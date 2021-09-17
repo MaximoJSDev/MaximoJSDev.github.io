@@ -18,15 +18,15 @@ body {
   background-color: #070707;
 }
 ::-webkit-scrollbar {
-  position: absolute;
   width: 8.5px;
 }
 ::-webkit-scrollbar-track {
   background: #070707;
 }
 ::-webkit-scrollbar-thumb {
-  background-image: -webkit-linear-gradient(#070707, var(--colorText));
-  border-radius: 15px;
+  background-image: linear-gradient(#070707 0%,rgba(61, 91, 241, 0.1) 35%,var(--colorText) 80%, var(--colorText) 100%);
+  border-end-start-radius: 20px;
+  border-end-end-radius: 20px;
 }
 .nav {
   position: fixed;
@@ -83,7 +83,8 @@ body {
   background-color: var(--colorSecondary);
 }
 .sticky {
-  background-color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 5px 0 #0f0f0f;
   backdrop-filter: blur(1px);
   padding: 5px 60px;
 }
