@@ -67,7 +67,7 @@ body {
 }
 .nav__menu__li {
   list-style: none;
-  margin-left: 45px;
+  margin-left: 50px;
 }
 .nav__menu__a {
   font-weight: 300;
@@ -86,7 +86,7 @@ body {
   background-color: rgba(0, 0, 0, 0.85);
   box-shadow: 0 0 5px 0 #0f0f0f;
   backdrop-filter: blur(1px);
-  padding: 5px 60px;
+  padding: 8px 60px;
 }
 .home {
   position: relative;
@@ -146,7 +146,7 @@ body {
   align-items: center;
   column-gap: 35px;
 }
-.social a {
+.social__a {
   padding: 12px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.06);
@@ -188,13 +188,10 @@ body {
   inset: 0;
   width: 108%;
   height: 100%;
-  background-image: linear-gradient(
-    342deg,
-    rgba(58, 14, 14, 0.16),
-    rgba(61, 91, 241, 0.3)
-  );
-  border-radius: 50%;
+  background-image: linear-gradient(to right, #3249c1, #3d5af1);
+  border-radius: 73% 27% 46% 54% / 74% 39% 61% 26% ;
   filter: blur(25px);
+  opacity: 0.15;
 }
 .services {
   position: relative;
@@ -581,8 +578,8 @@ body {
   height: 5px;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
-  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.55),
-    0 0 10px 4px rgba(255, 255, 255, 0.25), 0 0 17px 7px rgba(255, 84, 98, 0.15);
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5),
+    0 0 10px 4px rgba(255, 255, 255, 0.2), 0 0 17px 7px rgba(255, 84, 98, 0.1);
   animation: stars 4s linear infinite;
   transition: 0.6s;
 }
