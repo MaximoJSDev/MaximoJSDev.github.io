@@ -40,7 +40,7 @@ $viewMore.forEach((item) => {
       $technologies[3].innerHTML = "<span>✔️</span> VueJS";
       $technologies[4].innerHTML = "<span>✔️</span> Bootstrap";
     }
-    if (e.target.classList.contains("design")) {
+    else if (e.target.classList.contains("design")) {
       $modalTitle.textContent = "Diseño UX/UI";
       $subTitle.textContent = "Tecnologías:";
       $technologies[0].innerHTML = "<span>✔️</span> Figma";
@@ -49,7 +49,7 @@ $viewMore.forEach((item) => {
       $technologies[3].innerHTML = "<span>✔️</span> Gimp";
       $technologies[4].textContent = "";
     }
-    if (e.target.classList.contains("maintenance")) {
+     else if (e.target.classList.contains("maintenance")) {
       $modalTitle.textContent = "Mantenimiento Web";
       $subTitle.textContent = "¿Qué ofrecemos?";
       $technologies[0].innerHTML = "<span>✔️</span> Renovación de Hosting";
