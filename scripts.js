@@ -1,13 +1,4 @@
-let oldBtn;
-const $nav = document.querySelector(".nav");
-const $btnResponsive = document.querySelector(".btn-responsive");
-const $menu = document.querySelector(".nav__menu");
-const $viewMore = document.querySelectorAll(".services__information__view-more");
-const backModal = document.querySelector(".bakckground-modal");
-const $modal = document.querySelector(".modal");
-const $modalTitle = document.querySelector(".modal__title");
-const $btnModal = document.querySelector(".modal__btn");
-const $submit = document.querySelector(".contact__form");
+let oldBtn;const $nav=document.querySelector(".nav");const $btnResponsive=document.querySelector(".btn-responsive");const $menu=document.querySelector(".nav__menu");const $viewMore=document.querySelectorAll(".services__information__view-more");const backModal=document.querySelector(".bakckground-modal");const $modal=document.querySelector(".modal");const $modalTitle=document.querySelector(".modal__title");const $btnModal=document.querySelector(".modal__btn");const $submit=document.querySelector(".contact__form")
 window.addEventListener("scroll", function () {
   $nav.classList.toggle("sticky", window.scrollY > 10);
 });
@@ -24,7 +15,6 @@ $menu.addEventListener("click", (e) => {
     $menu.classList.remove("menuResponsive");
   }
 });
-//Modal
 $viewMore.forEach((item) => {
   item.addEventListener("click", (e) => {
     const $technologies = document.querySelectorAll(".modal__tec");
@@ -39,8 +29,7 @@ $viewMore.forEach((item) => {
       $technologies[2].innerHTML = "<span>✔️</span> JavaScript";
       $technologies[3].innerHTML = "<span>✔️</span> VueJS";
       $technologies[4].innerHTML = "<span>✔️</span> Bootstrap";
-    }
-    else if (e.target.classList.contains("design")) {
+    } else if (e.target.classList.contains("design")) {
       $modalTitle.textContent = "Diseño UX/UI";
       $subTitle.textContent = "Tecnologías:";
       $technologies[0].innerHTML = "<span>✔️</span> Figma";
@@ -48,8 +37,7 @@ $viewMore.forEach((item) => {
       $technologies[2].innerHTML = "<span>✔️</span> Webflow";
       $technologies[3].innerHTML = "<span>✔️</span> Gimp";
       $technologies[4].textContent = "";
-    }
-     else if (e.target.classList.contains("maintenance")) {
+    } else if (e.target.classList.contains("maintenance")) {
       $modalTitle.textContent = "Mantenimiento Web";
       $subTitle.textContent = "¿Qué ofrecemos?";
       $technologies[0].innerHTML = "<span>✔️</span> Renovación de Hosting";
@@ -68,7 +56,6 @@ const removeModal = () => {
   $modal.classList.remove("active-modal");
   setTimeout(() => backModal.classList.remove("back-modal-active"), 280);
 };
-//Contact
 $submit.addEventListener("submit", handleSubmit);
 async function handleSubmit(event) {
   event.preventDefault();
