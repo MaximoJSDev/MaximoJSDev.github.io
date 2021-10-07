@@ -40,10 +40,10 @@ $viewMore.forEach((item) => {
     } else if (e.target.classList.contains("maintenance")) {
       $modalTitle.textContent = "Mantenimiento Web";
       $subTitle.textContent = "¿Qué ofrecemos?";
-      $technologies[0].innerHTML = "<span>✔️</span> Renovación de Hosting";
-      $technologies[1].innerHTML = "<span>✔️</span> Rapidez de carga en la página web";
-      $technologies[2].innerHTML = "<span>✔️</span> Corrección de errores";
-      $technologies[3].innerHTML = "<span>✔️</span> Cambios en la página web";
+      $technologies[0].innerHTML = "<span>✔️</span> Renovación de Hosting.";
+      $technologies[1].innerHTML = "<span>✔️</span> Dominio perzonalizado.";
+      $technologies[2].innerHTML = "<span>✔️</span> Rapidez de carga en la página web.";
+      $technologies[3].innerHTML = "<span>✔️</span> Cambios en la página web.";
       $technologies[4].textContent = "";
     }
   });
