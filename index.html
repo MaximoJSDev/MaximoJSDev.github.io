@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Web - Eduardo Maximiliano Desarrollador Frontend</title>
     <meta
       name="description"
       content="Desarrollador Web enfocado en el Frontend y diseño UI/UX"
@@ -14,7 +15,6 @@
     <meta name="robots" content="index,nofollow" />
     <meta name="author" content="Eduardo maximiliano" />
     <link rel="canonical" href="https://maximo-4ever.github.io/" />
-    <title>Portafolio Web - Eduardo Maximiliano Desarrollador Frontend</title>
     <link rel="icon" href="Archivos/logo.jpg" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
@@ -24,6 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="scripts.js" defer></script>
   </head>
 
   <body>
@@ -51,7 +52,7 @@
         <div class="line"></div>
       </div>
     </nav>
-    <header class="home" id="home">
+    <header class="home">
       <section class="stars-content">
         <span class="star star1"></span>
         <span class="star star2"></span>
@@ -70,7 +71,6 @@
           dudes en contactarme.
         </p>
         <div class="social">
-          
           <a
             class="social__a"
             target="_blank"
@@ -143,30 +143,14 @@
         />
       </div>
     </header>
-    <div class="services" id="services">
+    <div class="services">
       <h2 class="titles">Servicios</h2>
-      <div class="bakckground-modal">
+      <div class="modal-container">
         <div class="modal">
           <h3 class="modal__title">Tecnologías</h3>
           <div class="modal__container">
             <h4 class="modal__sub-title">Tecnologías:</h4>
-            <ul class="modal__lista">
-              <li class="modal__li">
-                <h5 class="modal__tec">HTML</h5>
-              </li>
-              <li class="modal__li">
-                <h5 class="modal__tec">CSS</h5>
-              </li>
-              <li class="modal__li">
-                <h5 class="modal__tec">JavaScript</h5>
-              </li>
-              <li class="modal__li">
-                <h5 class="modal__tec">VueJS</h5>
-              </li>
-              <li class="modal__li">
-                <h5 class="modal__tec">Bootstrap</h5>
-              </li>
-            </ul>
+            <ul class="modal__lista"></ul>
           </div>
           <button class="modal__btn">OK</button>
         </div>
@@ -213,7 +197,7 @@
         </div>
       </div>
     </div>
-    <main class="projects" id="projects">
+    <main class="projects">
       <h2 class="titles">Proyectos</h2>
       <div class="projects__grid">
         <article class="projects__card">
@@ -354,7 +338,7 @@
         </article>
       </div>
     </main>
-    <footer class="contact" id="contact">
+    <footer class="contact">
       <div class="contact__window">
         <span class="contact__window__span">Correo enviado con exito!</span>
       </div>
@@ -399,6 +383,5 @@
       </form>
     </footer>
 
-    <script src="scripts.js" defer></script>
   </body>
 </html>

@@ -1,64 +1,77 @@
-let oldBtn;const $nav=document.querySelector(".nav");const $btnResponsive=document.querySelector(".btn-responsive");const $menu=document.querySelector(".nav__menu");const $viewMore=document.querySelectorAll(".services__information__view-more");const backModal=document.querySelector(".bakckground-modal");const $modal=document.querySelector(".modal");const $modalTitle=document.querySelector(".modal__title");const $btnModal=document.querySelector(".modal__btn");const $submit=document.querySelector(".contact__form")
-window.addEventListener("scroll", function () {
-  $nav.classList.toggle("sticky", window.scrollY > 10);
-});
-$btnResponsive.addEventListener("click", () =>
-  $menu.classList.toggle("menuResponsive")
-);
-$menu.addEventListener("click", (e) => {
+const $nav = document.querySelector(".nav");
+const $navMenu = document.querySelector(".nav__menu");
+const $navBtnResponsive = document.querySelector(".btn-responsive");
+const $viewMoreServices = document.querySelectorAll(".services__information__view-more");
+const $modalContainer = document.querySelector(".modal-container");
+const $modal = document.querySelector(".modal");
+const modalList = document.querySelector(".modal__lista");
+const $btnExitModal = document.querySelector(".modal__btn");
+const $submitForm = document.querySelector(".contact__form");
+let oldBtn;
+
+//Navbar
+window.addEventListener("scroll", () => $nav.classList.toggle("sticky", window.scrollY > 10));
+$navBtnResponsive.addEventListener("click", () => $navMenu.classList.toggle("menuResponsive"));
+$navMenu.addEventListener("click", (e) => {
   if (e.target && e.target.className == "nav__menu__a") {
     e.target.classList.add("active");
-    if (oldBtn !== undefined) {
-      oldBtn.classList.remove("active");
-    }
+    if (oldBtn !== undefined) oldBtn.classList.remove("active");
     oldBtn = e.target;
-    $menu.classList.remove("menuResponsive");
+    $navMenu.classList.remove("menuResponsive");
   }
 });
-$viewMore.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    const $technologies = document.querySelectorAll(".modal__tec");
-    const $subTitle = document.querySelector(".modal__sub-title");
-    backModal.classList.add("back-modal-active");
-    $modal.classList.add("active-modal");
-    if (e.target.classList.contains("frontend")) {
-      $modalTitle.textContent = "Desarrollo Frontend";
-      $subTitle.textContent = "Tecnologías:";
-      $technologies[0].innerHTML = "<span>✔️</span> HTML";
-      $technologies[1].innerHTML = "<span>✔️</span> CSS";
-      $technologies[2].innerHTML = "<span>✔️</span> JavaScript";
-      $technologies[3].innerHTML = "<span>✔️</span> VueJS";
-      $technologies[4].innerHTML = "<span>✔️</span> Bootstrap";
-    } else if (e.target.classList.contains("design")) {
-      $modalTitle.textContent = "Diseño UX/UI";
-      $subTitle.textContent = "Tecnologías:";
-      $technologies[0].innerHTML = "<span>✔️</span> Figma";
-      $technologies[1].innerHTML = "<span>✔️</span> InVision";
-      $technologies[2].innerHTML = "<span>✔️</span> Webflow";
-      $technologies[3].innerHTML = "<span>✔️</span> Gimp";
-      $technologies[4].textContent = "";
-    } else if (e.target.classList.contains("maintenance")) {
-      $modalTitle.textContent = "Mantenimiento Web";
-      $subTitle.textContent = "¿Qué ofrecemos?";
-      $technologies[0].innerHTML = "<span>✔️</span> Renovación de Hosting.";
-      $technologies[1].innerHTML = "<span>✔️</span> Dominio perzonalizado.";
-      $technologies[2].innerHTML = "<span>✔️</span> Rapidez de carga en la página web.";
-      $technologies[3].innerHTML = "<span>✔️</span> Cambios en la página web.";
-      $technologies[4].textContent = "";
-    }
+
+//Services
+const services = [
+  {
+    title: "Desarrollo Frontend",
+    subTitle: "Tecnologías:",
+    tecnologias: ["HTML", "CSS", "JavaScript", "VueJS", "Bootstrap"],
+  },
+  {
+    title: "Diseño UX/UI",
+    subTitle: "Tecnologías:",
+    tecnologias: ["Figma", "InVision", "Webflow", "Gimp"],
+  },
+  {
+    title: "Mantenimiento Web",
+    subTitle: "¿Qué ofrecemos?",
+    tecnologias: ["Renovación de Hosting.","Dominio perzonalizado.","Rapidez de carga para tu página web.","Cambios en tu página web."],
+  },
+];
+
+//Modal
+for (let i = 0; i < $viewMoreServices.length; i++) {
+  $viewMoreServices[i].addEventListener("click", () => {
+    $modal.classList.add("modal--show");
+    $modalContainer.classList.add("modal-container--show");
+    document.querySelector(".modal__title").textContent = services[i].title;
+    document.querySelector(".modal__sub-title").textContent = services[i].subTitle;
+    let listTech = "";
+    services[i].tecnologias.forEach((tecnologia) => {
+      listTech += //Html
+      `
+      <li class="modal__li">
+        <h5 class="modal__tech"><span>✔️</span> ${tecnologia}</h5>
+      </li>
+      `;
+    });
+    modalList.innerHTML = listTech;
   });
-});
-backModal.addEventListener("click", (e) => {
-  if (e.target == backModal) removeModal();
-});
-$btnModal.addEventListener("click", () => removeModal());
+}
 const removeModal = () => {
-  $modal.classList.remove("active-modal");
-  setTimeout(() => backModal.classList.remove("back-modal-active"), 280);
+  $modal.classList.remove("modal--show");
+  setTimeout(() => $modalContainer.classList.remove("modal-container--show"),250);
 };
-$submit.addEventListener("submit", handleSubmit);
+$btnExitModal.addEventListener("click", removeModal);
+$modalContainer.addEventListener("click", (e) =>
+  e.target.classList.contains("modal-container") ? removeModal() : ""
+);
+
+//Contact
 async function handleSubmit(event) {
   event.preventDefault();
+  document.querySelector(".contact__window__span").classList.remove("active");
   const form = new FormData(this);
   const response = await fetch(this.action, {
     method: this.method,
@@ -68,9 +81,8 @@ async function handleSubmit(event) {
     },
   });
   if (response.ok) {
-    const contactWindow = document
-      .querySelector(".contact__window__span")
-      .classList.add("active");
+    document.querySelector(".contact__window__span").classList.add("active");
     this.reset();
   }
 }
+$submitForm.addEventListener("submit", handleSubmit);
