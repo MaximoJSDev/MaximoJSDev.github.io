@@ -461,7 +461,7 @@ body {
   font-size: 23px;
   font-weight: 300;
   margin: 10px 0 30px;
-  line-height: 29px;
+  line-height: 30px;
   color: var(--colorText);
 }
 .projects__card__btn {
