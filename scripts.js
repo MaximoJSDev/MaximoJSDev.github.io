@@ -9,6 +9,7 @@ const $modalSubtitle = document.querySelector(".modal__sub-title");
 const $modalList = document.querySelector(".modal__lista");
 const $modalBtnExit = document.querySelector(".modal__btn");
 const $formSubmit = document.querySelector(".contact__form");
+const $alertForm = document.querySelector(".contact__window__span");
 
 //Navbar
 window.addEventListener("scroll", () =>
@@ -52,11 +53,9 @@ const services = [
 ];
 
 //Modal
-for (let i = 0; i < $servicesViewMore.length; i++) {
-  $servicesViewMore[i].addEventListener("click", () => {
-    addModal(i)
-  });
-}
+$servicesViewMore.forEach((viewMore, i) => {
+  viewMore.addEventListener("click", () => addModal(i));
+});
 const addModal = (i) => {
   $modalContainer.classList.add("modal-container--show");
   $modal.classList.add("modal--show");
@@ -78,21 +77,34 @@ const removeModal = () => {
   setTimeout(() => $modalContainer.classList.remove("modal-container--show"),250);
 };
 $modalBtnExit.addEventListener("click", removeModal);
-$modalContainer.addEventListener("click", (e) => e.target.classList.contains("modal-container") ? removeModal() : "");
+$modalContainer.addEventListener("click", (e) =>
+  e.target.classList.contains("modal-container") ? removeModal() : ""
+);
 
 //Contact
 async function handleSubmit(event) {
   event.preventDefault();
-  document.querySelector(".contact__window__span").classList.remove("active");
+  $alertForm.classList.remove("active");
   const form = new FormData(this);
-  const response = await fetch(this.action, {
-    method: this.method,
-    body: form,
-    headers: { Accept: "aplication/json" },
-  });
-  if (response.ok) {
-    document.querySelector(".contact__window__span").classList.add("active");
-    this.reset();
-  }
+  if (
+    document.getElementById("name").value.trim() !== "" &&
+    document.getElementById("email").value.trim() !== "" &&
+    document.getElementById("message").value.trim() !== ""
+  ) {
+    const response = await fetch(this.action, {
+      method: this.method,
+      body: form,
+      headers: { Accept: "aplication/json" },
+    });
+    if (response.ok) {
+      callAlertForm("Correo enviado con exito!");
+      this.reset();
+    } else callAlertForm("Por favor rellene los campos correctamente");
+  } else callAlertForm("Por favor rellene los campos correctamente");
 }
 $formSubmit.addEventListener("submit", handleSubmit);
+
+const callAlertForm = (msg) => {
+  $alertForm.textContent = msg;
+  $alertForm.classList.add("active");
+};
