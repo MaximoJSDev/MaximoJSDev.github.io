@@ -844,6 +844,13 @@ body {
   }
 }
 @media (max-width: 540px) {
+  #navbar {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+  #navbar.sticky {
+    padding: 10px 17px;
+  }
   #home {
     min-height: 95vh;
     padding-right: 0;
@@ -876,4 +883,5 @@ body {
   .modal-container {
     font-size: 11px;
   }
+  
 }
