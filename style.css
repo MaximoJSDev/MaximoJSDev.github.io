@@ -666,6 +666,7 @@ body {
   }
   .home__container-img__img {
     height: 350px;
+    width: auto;
     -webkit-box-reflect: below 2px
       linear-gradient(transparent, transparent, transparent, #04060f25);
   }
