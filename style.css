@@ -230,6 +230,7 @@ body {
   height: 10px;
   background-color: var(--colorSecondary);
   border-radius: 5px;
+  box-shadow: 0 0 14px #3366ccb5;
 }
 .modal-container {
   position: fixed;
@@ -330,7 +331,7 @@ body {
 .services__section__img {
   height: 290px;
   margin: 50px 0 32px;
-  filter: drop-shadow(0 0 20px hsl(220deg 60% 50% / 0.25));
+  filter: drop-shadow(0 0 36px #3366cc3f);
 }
 .services__section__title {
   text-align: center;
@@ -405,6 +406,7 @@ body {
 }
 .projects__img {
   width: 100%;
+  filter: drop-shadow(0 0 37px rgba(203, 209, 221, 0.12));
   -webkit-box-reflect: below 2px
     linear-gradient(transparent, transparent, transparent, #04060f28);
   transition: 0.4s;
