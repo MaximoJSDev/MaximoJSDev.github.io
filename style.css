@@ -406,6 +406,7 @@ body {
 }
 .projects__img {
   width: 100%;
+  height: 270px;
   filter: drop-shadow(0 0 37px rgba(203, 209, 221, 0.12));
   -webkit-box-reflect: below 2px
     linear-gradient(transparent, transparent, transparent, #04060f28);
@@ -437,24 +438,30 @@ body {
   line-height: 30px;
   color: var(--colorText);
 }
+.projects__card__btnContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
 .projects__card__btn {
-  font-size: 19px;
-  padding: 16px 35px;
+  font-size: 16px;
+  padding: 14px 27px;
   background-color: var(--colorPrimary);
-  border-radius: 40px;
+  border-radius: 17px;
   text-decoration: none;
   letter-spacing: 0.4px;
   color: #000;
-  box-shadow: 0 33px 36px rgba(34, 209, 238, 0.15),
-    0 15.2569px 16.6439px rgba(34, 209, 238, 0.11),
-    0 8.72965px 9.52326px rgba(34, 209, 238, 0.09),
-    0 5.29883px 5.78055px rgba(34, 209, 238, 0.08),
-    0 3.19278px 3.48303px rgba(34, 209, 238, 0.06),
-    0 1.77795px 1.93958px rgba(34, 209, 238, 0.05),
-    0 0.764683px 0.834199px rgba(34, 209, 238, 0.03);
+  box-shadow: 0 33px 36px rgba(34, 200, 238, 0.15),
+    0 15.2569px 16.6439px rgba(34, 200, 238, 0.11),
+    0 8.72965px 9.52326px rgba(34, 200, 238, 0.09),
+    0 5.29883px 5.78055px rgba(34, 200, 238, 0.08),
+    0 3.19278px 3.48303px rgba(34, 200, 238, 0.06),
+    0 1.77795px 1.93958px rgba(34, 200, 238, 0.05),
+    0 0.764683px 0.834199px rgba(34, 200, 238, 0.03);
   transition: 0.6s;
 }
-.projects__card__btn:hover {
+.projects__card__btn:not(.btn-view-code):hover {
   background-color: #00f7ff;
   box-shadow: 0 36px 36px rgba(34, 226, 238, 0.18),
     0 18.0176px 18.0176px rgba(34, 226, 238, 0.13),
@@ -464,6 +471,24 @@ body {
     0 2.83758px 2.83758px rgba(34, 226, 238, 0.07),
     0 1.63037px 1.63037px rgba(34, 226, 238, 0.06),
     0 0.717567px 0.717567px rgba(34, 226, 238, 0.04);
+}
+.btn-view-code {
+  outline: 2px solid var(--colorSecondary);
+  background: transparent;
+  color: #fff;
+  box-shadow: 0 33px 36px rgba(34, 92, 238, 0.15),
+    0 15.2569px 16.6439px rgba(34, 92, 238, 0.11),
+    0 8.72965px 9.52326px rgba(34, 92, 238, 0.09),
+    0 5.29883px 5.78055px rgba(34, 92, 238, 0.08),
+    0 3.19278px 3.48303px rgba(34, 92, 238, 0.06),
+    0 1.77795px 1.93958px rgba(34, 92, 238, 0.05),
+    0 0.764683px 0.834199px rgba(34, 92, 238, 0.03);
+}
+.projects__viewMoreProjects {
+  color: var(--colorText);
+    /* font-size: 30px; */
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 #contact {
   display: flex;
