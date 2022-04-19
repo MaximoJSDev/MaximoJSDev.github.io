@@ -1,5 +1,5 @@
 const $navbar = document.getElementById("navbar");
-const $navHamburguese = document.querySelector(".btn-responsive");
+const $navHamburger = document.querySelector(".btn-responsive");
 const $navList = document.querySelector(".nav__menu");
 const $servicesViewMore = document.querySelectorAll(".services__section__view-more");
 const $modalContainer = document.querySelector(".modal-container");
@@ -11,15 +11,15 @@ const $modalBtnExit = document.querySelector(".modal__btn");
 const $formSubmit = document.querySelector(".contact__form");
 const $alertForm = document.querySelector(".contact__window__span");
 
-//Navbar
+// Navbar
 window.addEventListener("scroll", () =>
   $navbar.classList.toggle("sticky", window.scrollY > 10)
 );
-$navHamburguese.addEventListener("click", () =>
+$navHamburger.addEventListener("click", () =>
   $navList.classList.toggle("menuResponsive")
 );
 $navList.addEventListener("click", (e) => {
-  if (e.target && e.target.className == "nav__menu__a") {
+  if (e.target.classList.contains("nav__menu__a")) {
     document
       .querySelectorAll(".nav__menu__a")
       .forEach((item) => item.classList.remove("active"));
@@ -28,41 +28,51 @@ $navList.addEventListener("click", (e) => {
   }
 });
 
-//Services
-const services = [
+// Services
+const servicesList = [
   {
     title: "Desarrollo Frontend",
-    subTitle: "Tecnologías:",
-    tecnologias: ["HTML", "CSS", "JavaScript", "VueJS", "Bootstrap"],
+    subTitle: "¿Qué ofrezco?",
+    services: [
+      "Adaptación al diseño entregado",
+      "Página multi plataforma",
+      "Alta velocidad de carga",
+      "Web totalmente responsiva",
+    ],
   },
   {
     title: "Diseño UX/UI",
-    subTitle: "Tecnologías:",
-    tecnologias: ["Figma", "Adobe XD", "Photoshop"],
+    subTitle: "¿Qué ofrezco?",
+    services: [
+      "Creación de Interfaces",
+      "Experiencia de usuario intuitiva",
+      "Elementos interactivos",
+      "Diseño atractivo",
+    ],
   },
   {
     title: "Mantenimiento Web",
-    subTitle: "¿Qué ofrecemos?",
-    tecnologias: [
-      "Renovación de Hosting.",
-      "Dominio perzonalizado.",
-      "Velocidad para tu página web.",
-      "Cambios perzonalizados.",
+    subTitle: "¿Qué ofrezco?",
+    services: [
+      "Mantenimiento técnico",
+      "Renovación de Hosting",
+      "Dominio personalizado",
+      "Posicionamiento SEO",
     ],
   },
 ];
 
-//Modal
+// Modal
 $servicesViewMore.forEach((viewMore, i) => {
   viewMore.addEventListener("click", () => addModal(i));
 });
 const addModal = (i) => {
   $modalContainer.classList.add("modal-container--show");
   $modal.classList.add("modal--show");
-  $modalTitle.textContent = services[i].title;
-  $modalSubtitle.textContent = services[i].subTitle;
+  $modalTitle.textContent = servicesList[i].title;
+  $modalSubtitle.textContent = servicesList[i].subTitle;
   let listTech = "";
-  services[i].tecnologias.forEach((tecnologia) => {
+  servicesList[i].services.forEach((tecnologia) => {
     listTech += //Html
     `
     <li class="modal__li">
@@ -74,22 +84,27 @@ const addModal = (i) => {
 };
 const removeModal = () => {
   $modal.classList.remove("modal--show");
-  setTimeout(() => $modalContainer.classList.remove("modal-container--show"),250);
+  setTimeout(
+    () => $modalContainer.classList.remove("modal-container--show"),
+    250
+  );
 };
 $modalBtnExit.addEventListener("click", removeModal);
 $modalContainer.addEventListener("click", (e) =>
   e.target.classList.contains("modal-container") ? removeModal() : ""
 );
 
-//Contact
+// Contact
 async function handleSubmit(event) {
   event.preventDefault();
+  const { name, email, message } = event.target;
+  console.log(name, email, message);
   $alertForm.classList.remove("active");
   const form = new FormData(this);
   if (
-    document.getElementById("name").value.trim() !== "" &&
-    document.getElementById("email").value.trim() !== "" &&
-    document.getElementById("message").value.trim() !== ""
+    name.value.trim() !== "" &&
+    email.value.trim() !== "" &&
+    message.value.trim() !== ""
   ) {
     const response = await fetch(this.action, {
       method: this.method,
