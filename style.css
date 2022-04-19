@@ -209,7 +209,7 @@ body {
   flex-direction: column;
   background-color: var(--bg-color);
 }
-.sub-titles {
+.subtitle {
   position: relative;
   text-align: center;
   font-size: 65px;
@@ -219,7 +219,7 @@ body {
   padding: 20px;
   margin-bottom: 45px;
 }
-.sub-titles::after {
+.subtitle::after {
   content: "";
   position: absolute;
   left: 0;
@@ -466,7 +466,7 @@ body {
 .projects__card__btn:not(.btn-view-code):hover {
   background-color: #00f7ff;
   box-shadow: 0 36px 36px rgba(34, 226, 238, 0.18),
-    0 18.0px 18px rgba(34, 226, 238, 0.13),
+    0 18px 18px rgba(34, 226, 238, 0.13),
     0 10.8px 10.8px rgba(34, 226, 238, 0.11),
     0 6.9px 6.9px rgba(34, 226, 238, 0.1),
     0 4.5px 4.5px rgba(34, 226, 238, 0.09),
@@ -480,15 +480,13 @@ body {
   color: #fff;
   box-shadow: 0 33px 36px rgba(34, 92, 238, 0.15),
     0 15.2px 16.6px rgba(34, 92, 238, 0.11),
-    0 8.7px 9.5px rgba(34, 92, 238, 0.09),
-    0 5.2px 5.7px rgba(34, 92, 238, 0.08),
-    0 3.1px 3.4px rgba(34, 92, 238, 0.06),
-    0 1.7px 1.9px rgba(34, 92, 238, 0.05),
+    0 8.7px 9.5px rgba(34, 92, 238, 0.09), 0 5.2px 5.7px rgba(34, 92, 238, 0.08),
+    0 3.1px 3.4px rgba(34, 92, 238, 0.06), 0 1.7px 1.9px rgba(34, 92, 238, 0.05),
     0 0.7px 0.8px rgba(34, 92, 238, 0.03);
 }
 .projects__viewMoreProjects {
   color: var(--colorText);
-    /* font-size: 30px; */
+  /* font-size: 30px; */
   text-transform: uppercase;
   text-decoration: underline;
 }
@@ -726,11 +724,11 @@ body {
   .home__paragraph {
     font-size: 19px;
   }
-  .sub-titles {
+  .subtitle {
     font-size: 45px;
     margin: 0 0 20px;
   }
-  .sub-titles::after {
+  .subtitle::after {
     width: 124px;
   }
   .services__section {
@@ -757,7 +755,7 @@ body {
     padding-right: 8.5%;
   }
 }
-  
+
 @media (max-width: 630px) {
   .nav__menu {
     position: absolute;
@@ -830,7 +828,7 @@ body {
     font-size: 18px;
   }
   .projects__grid {
-    grid-template-columns: 100%
+    grid-template-columns: 100%;
   }
   .projects__card__title {
     font-size: 28px;
