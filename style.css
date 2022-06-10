@@ -101,7 +101,7 @@ body {
   justify-content: space-around;
   padding: 10px 40px 0;
   background-color: #00041a;
-  background: radial-gradient(50% 50% at 50% 50%, #090827 4.17%, #000109 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #090824 -20%, #000109 100%);
 }
 
 #home::after {
@@ -111,7 +111,7 @@ body {
   position: absolute;
   left: 0;
   bottom: -7px;
-  background-image: linear-gradient(transparent, #020310);
+  background-image: linear-gradient(transparent, #02030f);
   z-index: 11;
 }
 
@@ -188,8 +188,8 @@ body {
   color: #00acee;
 }
 
-.social__a:hover .fa-instagram {
-  color: #c13584;
+.social__a:hover .fa-linkedin {
+  color: #0e76a8;
 }
 
 .home__container-img {
@@ -362,7 +362,7 @@ body {
 .services__section__img {
   height: 290px;
   margin: 50px 0 32px;
-  filter: drop-shadow(0 0 36px #3366cc3f);
+  filter: drop-shadow(0 0 24px #3366cc2b);
 }
 
 .services__section__title {
