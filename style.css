@@ -7,8 +7,8 @@
 }
 
 :root {
-  --colorSecondary: #3d5af1;
-  --colorPrimary: #22d1ee;
+  --colorPrimary: #6889CA;
+  --colorSecondary: #9281D5;
   --colorText: #e2f3f5;
   --bg-color: #02030f;
 }
@@ -82,9 +82,7 @@ body {
 .active,
 .nav__menu__a:hover {
   background-color: var(--colorSecondary);
-  box-shadow: 0px 4.1px 5.3px rgba(30, 112, 255, 0.061),
-    0px 13.8px 17.9px rgba(30, 112, 255, 0.095),
-    0px 62px 80px rgba(30, 112, 255, 0.15);
+  box-shadow: 0px 57px 77px rgba(146, 129, 213, 0.1), 0px 17.1838px 23.2132px rgba(146, 129, 213, 0.0651589), 0px 7.13728px 9.64159px rgba(146, 129, 213, 0.05), 0px 2.58142px 3.48718px rgba(146, 129, 213, 0.0348411);
 }
 
 #navbar.sticky {
@@ -247,7 +245,7 @@ body {
   height: 10px;
   background-color: var(--colorSecondary);
   border-radius: 5px;
-  box-shadow: 0 0 14px #3366ccb5;
+  box-shadow: 0 0 14px #9281d5c4;
 }
 
 .modal-container {
@@ -291,7 +289,7 @@ body {
   text-align: center;
   font-size: 3em;
   padding-bottom: 0.15em;
-  background-image: linear-gradient(to right, #3249c1, #3d5af1);
+  background-image: linear-gradient(to right bottom, #5e6fc3, #673df1);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -338,7 +336,7 @@ body {
   border-radius: 7px;
   padding: 0.75em 3.8em;
   margin-top: 15px;
-  background-image: linear-gradient(to right, #3249c1, #3d5af1);
+  background-image: linear-gradient(to right bottom, #5e6fc3, #673df1);
   cursor: pointer;
 }
 
@@ -536,37 +534,29 @@ body {
   text-decoration: none;
   letter-spacing: 0.4px;
   color: #000;
-  box-shadow: 0 33px 36px rgba(34, 200, 238, 0.15),
-    0 15.2px 16.6px rgba(34, 200, 238, 0.11),
-    0 8.7px 9.5px rgba(34, 200, 238, 0.09),
-    0 5.2px 5.7px rgba(34, 200, 238, 0.08),
-    0 3.1px 3.4px rgba(34, 200, 238, 0.06),
-    0 1.7px 1.9px rgba(34, 200, 238, 0.05),
-    0 0.7px 0.8px rgba(34, 200, 238, 0.03);
+  box-shadow: 0px 36px 36px rgba(86, 90, 171, 0.18), 0px 18.0176px 18.0176px rgba(86, 90, 171, 0.13686), 0px 10.8529px 10.8529px rgba(86, 90, 171, 0.117286), 0px 6.95514px 6.95514px rgba(86, 90, 171, 0.102761), 0px 4.50776px 4.50776px rgba(86, 90, 171, 0.09), 0px 2.83758px 2.83758px rgba(86, 90, 171, 0.0772389), 0px 1.63037px 1.63037px rgba(86, 90, 171, 0.062714), 0px 0.717567px 0.717567px rgba(86, 90, 171, 0.0431401);
+  cursor: pointer;
   transition: 0.6s;
 }
 
 .projects__card__btn:not(.btn-view-code):hover {
-  background-color: #00f7ff;
-  box-shadow: 0 36px 36px rgba(34, 226, 238, 0.18),
-    0 18px 18px rgba(34, 226, 238, 0.13),
-    0 10.8px 10.8px rgba(34, 226, 238, 0.11),
-    0 6.9px 6.9px rgba(34, 226, 238, 0.1),
-    0 4.5px 4.5px rgba(34, 226, 238, 0.09),
-    0 2.8px 2.8px rgba(34, 226, 238, 0.07),
-    0 1.6px 1.6px rgba(34, 226, 238, 0.06),
-    0 0.7px 0.7px rgba(34, 226, 238, 0.04);
+  background-color: rgb(84, 112, 255);
+  /* background-color: #4d60bc; */
+  box-shadow: 0 36px 36px rgba(84, 112, 255, 0.18),
+    0 18px 18px rgba(84, 112, 255, 0.13),
+    0 10.8px 10.8px rgba(84, 112, 255, 0.11),
+    0 6.9px 6.9px rgba(84, 112, 255, 0.1),
+    0 4.5px 4.5px rgba(84, 112, 255, 0.09),
+    0 2.8px 2.8px rgba(84, 112, 255, 0.07),
+    0 1.6px 1.6px rgba(84, 112, 255, 0.06),
+    0 0.7px 0.7px rgba(84, 112, 255, 0.04);
 }
 
 .btn-view-code {
   outline: 2px solid var(--colorSecondary);
   background: transparent;
   color: #fff;
-  box-shadow: 0 33px 36px rgba(34, 92, 238, 0.15),
-    0 15.2px 16.6px rgba(34, 92, 238, 0.11),
-    0 8.7px 9.5px rgba(34, 92, 238, 0.09), 0 5.2px 5.7px rgba(34, 92, 238, 0.08),
-    0 3.1px 3.4px rgba(34, 92, 238, 0.06), 0 1.7px 1.9px rgba(34, 92, 238, 0.05),
-    0 0.7px 0.8px rgba(34, 92, 238, 0.03);
+  box-shadow: 0px 36px 36px rgba(86, 90, 171, 0.18), 0px 18.0176px 18.0176px rgba(86, 90, 171, 0.13686), 0px 10.8529px 10.8529px rgba(86, 90, 171, 0.117286), 0px 6.95514px 6.95514px rgba(86, 90, 171, 0.102761), 0px 4.50776px 4.50776px rgba(86, 90, 171, 0.09), 0px 2.83758px 2.83758px rgba(86, 90, 171, 0.0772389), 0px 1.63037px 1.63037px rgba(86, 90, 171, 0.062714), 0px 0.717567px 0.717567px rgba(86, 90, 171, 0.0431401);
 }
 
 .projects__viewMoreProjects {
