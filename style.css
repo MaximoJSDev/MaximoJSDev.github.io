@@ -1,22 +1,15 @@
 * {
   box-sizing: border-box;
 }
-
-::selection {
-  background-color: #1d3ee159;
-}
-
 :root {
-  --colorPrimary: #6889CA;
-  --colorSecondary: #9281D5;
-  --colorText: #e2f3f5;
+  --colorPrimary: #3086fa;
+  --colorSecondary: #5f40f5;
+  --colorText: #fff;
   --bg-color: #02030f;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
@@ -25,11 +18,9 @@ body {
 ::-webkit-scrollbar {
   width: 8.5px;
 }
-
 ::-webkit-scrollbar-track {
   background: #070707;
 }
-
 ::-webkit-scrollbar-thumb {
   background-image: linear-gradient(#070707 0%,
       rgba(61, 91, 241, 0.1) 35%,
@@ -86,8 +77,8 @@ body {
 }
 
 #navbar.sticky {
-  background-color: rgba(0, 0, 0, 0.86);
-  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(30px);
   padding: 10px 60px;
 }
 
@@ -98,7 +89,7 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 10px 40px 0;
-  background-color: #00041a;
+  background-color: var(--bg-color);
   background: radial-gradient(50% 50% at 50% 50%, #090824 -20%, #000109 100%);
 }
 
@@ -162,7 +153,7 @@ body {
 .social__a {
   padding: 12px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(46, 44, 54, 0.64);
   display: flex;
 }
 
@@ -193,12 +184,12 @@ body {
 .home__container-img {
   position: relative;
   z-index: 100;
-  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, transparent, #0000000a);
 }
 
 .home__container-img__img {
   height: 500px;
   width: 396px;
+  -webkit-box-reflect: below -8% linear-gradient(transparent, transparent, transparent, #00000033);
 }
 
 .home__container-img::before {
@@ -340,7 +331,7 @@ body {
   cursor: pointer;
 }
 
-.services__container-flex {
+.services__container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -349,7 +340,7 @@ body {
   row-gap: 60px;
 }
 
-.services__section {
+.services__card{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -400,7 +391,7 @@ body {
   padding: 5px 8px;
   margin-left: 7px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.044);
+  background-color: rgba(46, 44, 54, 0.64);
   transition: margin-left 0.6s;
 }
 
@@ -663,7 +654,7 @@ body {
   border-radius: 7px;
 }
 
-.stars-content {
+.stars-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -850,7 +841,7 @@ body {
     width: 124px;
   }
 
-  .services__section {
+  .services__card{
     font-size: 14px;
   }
 
@@ -958,7 +949,7 @@ body {
     font-size: 17px;
   }
 
-  .services__section {
+  .services__card{
     font-size: 12px;
   }
 
