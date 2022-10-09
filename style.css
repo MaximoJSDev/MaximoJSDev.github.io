@@ -408,7 +408,7 @@ body {
 }
 .projects__card__title {
   white-space: nowrap;
-  font-size: 2.2em;
+  font-size: 2.1em;
   letter-spacing: 0.5px;
   font-weight: 500;
   color: #fff;
@@ -763,8 +763,11 @@ body {
     width: 124px;
   }
 
-  .services__card{
+  .services__card {
     font-size: 14px;
+  }
+  .services__section__img {
+    height: 272px;
   }
   .services__section__paragraph {
     max-width: 372px;
@@ -786,6 +789,38 @@ body {
   #skills {
     padding-left: 8.5%;
     padding-right: 8.5%;
+  }
+  .projects__grid {
+    grid-template-columns: 100%;
+    row-gap: 50px;
+  }
+  .projects__card__title {
+    font-size: 28px;
+    white-space: normal;
+    letter-spacing: normal;
+  }
+  .projects__card__paragraph {
+    max-width: 334px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .projects__card__btnContainer {
+    flex-direction: column;
+  }
+  .projects__card__btn {
+    font-size: 15px;
+    padding: 13px 24px;
+    margin-top: 4px;
+  }
+  .btn-view-code {
+    margin-top: 9px;
+  }
+  .projects__img {
+    height: 180px;
+  }
+  .projects__card__paragraph {
+    max-width: 320px;
   }
 }
 
@@ -867,32 +902,6 @@ body {
     font-size: 17px;
   }
 
-  .projects__grid {
-    grid-template-columns: 100%;
-    row-gap: 50px;
-  }
-  .projects__card__title {
-    font-size: 28px;
-    white-space: normal;
-    letter-spacing: normal;
-  }
-  .projects__card__paragraph {
-    max-width: 334px;
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 20px;
-  }
-  .projects__card__btnContainer {
-    flex-direction: column;
-  }
-  .projects__card__btn {
-    font-size: 15px;
-    padding: 13px 24px;
-    margin-top: 4px;
-  }
-  .btn-view-code {
-    margin-top: 9px;
-  }
 
   #contact {
     padding-top: 50px;
@@ -964,12 +973,6 @@ body {
     font-size: 11px;
   }
 
-  .projects__img {
-    height: 180px;
-  }
-  .projects__card__paragraph {
-    max-width: 320px;
-  }
 
   .skills__lista{
     gap: 15px;
