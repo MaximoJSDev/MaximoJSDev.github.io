@@ -5,7 +5,6 @@
   --colorPrimary: #3086fa;
   --colorSecondary: #5f40f5;
   --colorText: #fff;
-  --bg-color: #02030f;
 }
 html {
   scroll-behavior: smooth;
@@ -13,6 +12,7 @@ html {
 body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
+  background-color: #02030f;
 }
 
 ::-webkit-scrollbar {
@@ -83,7 +83,6 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 10px 40px 0;
-  background-color: var(--bg-color);
   background: radial-gradient(50% 50% at 50% 50%, #090824 -20%, #000109 100%);
 }
 #home::after {
@@ -207,13 +206,13 @@ body {
 .modal-container {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.65);
   display: flex;
   transition: background-color 0.3s;
   z-index: -1;
 }
 .modal-container--show {
   z-index: 11111;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 .modal {
   margin: auto;
@@ -294,7 +293,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--bg-color);
 }
 .services__container {
   width: 100%;
@@ -367,7 +365,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--bg-color);
 }
 .projects__grid {
   width: 100%;
@@ -471,7 +468,6 @@ body {
   justify-content: center;
   flex-direction: column;
   color: var(--colorText);
-  background-color: var(--bg-color);
 }
 .skills h3 {
   font-weight: 600;
@@ -520,7 +516,6 @@ body {
   min-height: 80vh;
   padding: 80px 0 90px;
   overflow: hidden;
-  background-color: var(--bg-color);
 }
 .contact__window {
   position: relative;
