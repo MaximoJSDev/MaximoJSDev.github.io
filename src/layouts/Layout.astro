@@ -1,0 +1,79 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<meta
+			name="description"
+			content="Creativo, proactivo y entusiasta Desarrollador Web Front-end. Especializado en la implementacion del Diseño de interfaces y en la experiencia de usuario ideal."
+		/>
+		<meta
+			name="keywords"
+			content="Eduardo Maximiliano,portafolio,desarrollador,desarrollador web,desarrollador front end,diseño web,diseñador web,ui ux,freelance,maximojsdev, maximodev, maximo4ever"
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Eduardo maximiliano" />
+		<meta name="theme-color" content="#303443" />
+		<meta
+			property="og:image"
+			content="https://avatars.githubusercontent.com/u/82767376?s=400&u=87460c41ac5ec28ca91668311c76a2f7a292de7e&v=4"
+		/>
+		<meta property="og:image:alt" content="MaximoJSDev - Logo" />
+
+		<link rel="canonical" href="https://MaximoJSDev.github.io/" />
+		<link
+			rel="shortcut icon"
+			href="https://avatars.githubusercontent.com/u/82767376?s=400&u=87460c41ac5ec28ca91668311c76a2f7a292de7e&v=4"
+			type="image/png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
