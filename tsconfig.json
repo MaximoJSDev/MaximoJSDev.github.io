@@ -9,8 +9,8 @@
       "@/components": [
         "src/components/*"
       ],
-      "@/icons": [
-        "src/icons/*"
+      "@/assets": [
+        "src/assets/*"
       ],
     }
   }
