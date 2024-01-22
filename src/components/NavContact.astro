@@ -1,0 +1,55 @@
+---
+import Linkedin from "@/assets/Linkedin.astro";
+import Github from "@/assets/Github.astro";
+import Email from "@/assets/Email.astro";
+---
+
+<nav>
+  <a target="_blank" href="https://www.linkedin.com/in/MaximoJSDev/">
+    <Linkedin />
+    LinkedIn
+  </a>
+  <a target="_blank" href="https://github.com/MaximoJSDev">
+    <Github />
+    GitHub
+  </a>
+  <a target="_blank" href="https://maximojsdev@gmail.com">
+    <Email />
+    maximojsdev@gmail.com
+  </a>
+</nav>
+<style is:global>
+  a:has(> svg):hover svg {
+    filter: grayscale(0) brightness(100%);
+    transform: scale(1.1);
+  }
+</style>
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+    margin-top: 15px;
+  }
+  a {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    column-gap: 8px;
+    background-color: #18202e;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid rgb(255 255 255 / 11%);
+    transition: transform 0.3s;
+  }
+  a:hover {
+    transform: scale(1.05);
+  }
+  img {
+    height: 42px;
+    width: 42px;
+  }
+</style>

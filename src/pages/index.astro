@@ -1,9 +1,57 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import NavContact from "@/components/NavContact.astro";
 ---
 
 <Layout title="Eduardo Maximiliano | Desarrollador Web & Diseñador UI/UX">
-	<main>Hello</main>
+	<Header />
+	<main>
+		<section id="inicio">
+			<article class="inicio__article">
+				<h1 class="inicio__title">Hola, soy Maximiliano</h1>
+				<h3 class="inicio__subtitle">Desarrollador Web Front-end</h3>
+				<p class="inicio__text">
+					Creativo, proactivo y entusiasta Desarrollador Web Front-end.
+					Especializado en la implementacion del Diseño de interfaces y en la
+					experiencia de usuario ideal.
+				</p>
+				<NavContact />
+			</article>
+			<img src="/images/logo.webp" alt="" />
+		</section>
+	</main>
 </Layout>
 
-<style></style>
+<style>
+	#inicio {
+		display: flex;
+		align-items: center;
+		margin-top: 80px;
+	}
+	.inicio__article {
+		max-width: 660px;
+		margin-right: 110px;
+	}
+	.inicio__title {
+		font-size: 40px;
+		margin-bottom: 2px;
+	}
+	.inicio__subtitle {
+		font-size: 24px;
+		font-weight: 600;
+		color: var(--primaryColor);
+		margin-bottom: 20px;
+	}
+	.inicio__text {
+		font-size: 24px;
+		line-height: 130%;
+	}
+	#inicio img {
+		width: 180px;
+	}
+	main {
+		width: 1060px;
+		margin-inline: auto;
+	}
+</style>
