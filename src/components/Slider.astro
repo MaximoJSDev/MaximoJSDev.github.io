@@ -1,0 +1,163 @@
+---
+const tecnologias = [
+  {
+    title: "HTML",
+    src: "html.svg",
+  },
+  {
+    title: "CSS3",
+    src: "css3.svg",
+  },
+  {
+    title: "JavaScript",
+    src: "javascript.svg",
+  },
+  {
+    title: "TypeScript",
+    src: "typescript.svg",
+  },
+  {
+    title: "Tailwind",
+    src: "tailwindcss.svg",
+  },
+  {
+    title: "Bootstrap",
+    src: "bootstrap.svg",
+  },
+  {
+    title: "Astro",
+    src: "astro.svg",
+  },
+  {
+    title: "React",
+    src: "react.svg",
+  },
+  {
+    title: "Vue",
+    src: "vue.svg",
+  },
+  {
+    title: "Next",
+    src: "nextjs.svg",
+  },
+  {
+    title: "Nuxt",
+    src: "nuxt.svg",
+  },
+  {
+    title: "Node",
+    src: "node-js.svg",
+  },
+  {
+    title: "Express",
+    src: "expressjs.svg",
+  },
+  {
+    title: "MySQL",
+    src: "mysql.svg",
+  },
+  {
+    title: "MongoDB",
+    src: "mongodb.svg",
+  },
+  {
+    title: "Firebase",
+    src: "firebase.svg",
+  },
+  {
+    title: "Figma",
+    src: "figma.svg",
+  },
+];
+---
+
+<div class="slider">
+  <ul class="slide-track">
+    {
+      tecnologias.map(({ title, src }) => (
+        <li class="slide">
+          <img
+            src={`/icons/${src}`}
+            height="50"
+            width="50"
+            alt={title}
+            title={title}
+          />
+          {title}
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="slide-track">
+    {
+      tecnologias.map(({ title, src }) => (
+        <li class="slide">
+          <img
+            src={`/icons/${src}`}
+            height="50"
+            width="50"
+            alt={title}
+            title={title}
+          />
+          {title}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+  }
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(
+      90deg,
+      #18202e 14%,
+      rgba(24, 32, 46, 0.94) 24%,
+      rgba(24, 32, 46, 0.87) 46%,
+      rgba(24, 32, 46, 0.71) 70%,
+      rgba(24, 32, 46, 0) 100%
+    );
+
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+  }
+  .slider::after {
+    right: 0;
+    transform: rotateZ(180deg);
+  }
+  .slider::before {
+    left: 0;
+  }
+  .slider .slide-track {
+    animation: scroll 42s linear infinite;
+    display: flex;
+  }
+  .slide {
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    flex-direction: column;
+  }
+  .slide img {
+    object-fit: contain;
+  }
+</style>

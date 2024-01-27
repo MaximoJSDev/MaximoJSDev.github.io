@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import NavContact from "@/components/NavContact.astro";
 import Projects from "@/components/Projects.astro";
+import Slider from "@/components/Slider.astro";
 ---
 
 <Layout title="Eduardo Maximiliano | Desarrollador Web & Diseñador UI/UX">
@@ -34,10 +35,10 @@ import Projects from "@/components/Projects.astro";
 					<h3>Desarrollo Front-end</h3>
 					<p>Aplicaciones dinámicas, escalables y adaptables.</p>
 					<p>
-						Garantizo la accesibilidad de las aplicaciones a diversos
+						Garantizando la accesibilidad de las aplicaciones a diversos
 						dispositivos.
 					</p>
-					<p>Experto en HTML, CSS, JavaScript y su entorno.</p>
+					<p>Altamente competente en el dominio de las tecnologias web.</p>
 				</article>
 				<article class="ui-ux">
 					<h3>Diseño UI/UX</h3>
@@ -56,10 +57,33 @@ import Projects from "@/components/Projects.astro";
 				</article>
 			</div>
 		</section>
+		<section id="tecnologias">
+			<h2>
+				<img src="/icons/tecno.svg" alt="Tecnologias icono" /> Tecnologías
+			</h2>
+			<p class="tecnologias__text">
+				Algunas de las tecnologías con las que trabajo.
+			</p>
+			<div class="slider-container">
+				<Slider />
+			</div>
+		</section>
 	</main>
 </Layout>
 
 <style>
+	.slider-container {
+		background-color: #18202e;
+		padding: 40px 30px;
+		border-radius: 30px;
+	}
+	#tecnologias {
+		margin-top: 75px;
+	}
+	.tecnologias__text {
+		font-size: 22px;
+		margin-bottom: 28px;
+	}
 	#habilidades {
 		margin-top: 75px;
 	}
