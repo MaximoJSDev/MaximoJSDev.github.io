@@ -1,0 +1,30 @@
+---
+interface Props {
+  outline: string;
+}
+
+const { outline } = Astro.props;
+---
+
+<button class={`btn ${outline}`}>
+  <slot />
+</button>
+<style>
+  .btn {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 8px 30px;
+    background-color: var(--primaryColor);
+    cursor: pointer;
+  }
+  .btn.outline {
+    background-color: #18202e;
+    border: 1px solid #006dff;
+  }
+</style>
