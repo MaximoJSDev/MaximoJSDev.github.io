@@ -1,0 +1,158 @@
+---
+import Button from "@/components/Button.astro";
+const TAGS = {
+  javascript: {
+    name: "JavaScript",
+    icon: "javascript",
+    color: "#fff",
+    bg: "#2b2a20",
+  },
+  react: {
+    name: "React",
+    icon: "react",
+    color: "#fff",
+    bg: "#ac5637",
+  },
+  vue: {
+    name: "Vue.js",
+    icon: "vue",
+    color: "#fff",
+    bg: "#6a676a",
+  },
+  next: {
+    name: "Next.js",
+    icon: "nextjs",
+    color: "#fff",
+    bg: "#111",
+  },
+  nuxt: {
+    name: "Nuxt.js",
+    icon: "nuxt",
+    color: "#fff",
+    bg: "#152939",
+  },
+};
+const PROJECTS = [
+  {
+    title: "Rest countries API",
+    description:
+      "Aplicación de búsqueda de países con API integrada para obtener datos sobre diferentes países. Permite a los usuarios filtrar información y explorar detalles específicos de cada país.",
+    link: "https://maximojsdev.github.io/Rest-countries-API/",
+    repo: "https://github.com/MaximoJSDev/Rest-countries-API",
+    image: "/images/contries-api.webp",
+    tags: [TAGS.javascript],
+  },
+  {
+    title: "URL Shortering",
+    description:
+      "Acortador de enlaces URL con guardado automatico en el localStorage del navegador. Facilita a los usuarios generar versiones más concisas de sus enlaces.",
+    link: "https://maximojsdev.github.io/Url-Shortening-Api/",
+    repo: "https://github.com/MaximoJSDev/Url-Shortening-Api",
+    image: "/images/url-short.webp",
+    tags: [TAGS.javascript],
+  },
+  {
+    title: "IP Tracker",
+    description:
+      "Aplicacion de rastreo de IPs y dominios registrados. Añade un mapa dinamico para localizar la ubicacion.",
+    link: "https://maximojsdev.github.io/IP-Address-Tracker/",
+    repo: "https://maximojsdev.github.io/IP-Address-Tracker/",
+    image: "/images/ip-tracker.webp",
+    tags: [TAGS.javascript],
+  },
+  {
+    title: "Space Tourism",
+    description:
+      "Sitio web multiplataforma y multipagina con enrutamiento dinamico. Elementos interactivos en tiempo real.",
+    link: "https://space-tourism-maximojsdev.vercel.app/",
+    repo: "https://space-tourism-maximojsdev.vercel.app/",
+    image: "/images/space.webp",
+    tags: [TAGS.nuxt],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, repo, image, tags }) => (
+    <article class="project">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <ul>
+        {tags.map(({ name, icon, color, bg }) => (
+          <li style={{ color: `${color}`, backgroundColor: `${bg}` }}>
+            <img src={`/icons/${icon}.svg`} alt={`${icon} icon`} />
+            {name}
+          </li>
+        ))}
+      </ul>
+      <a target="_blank" href={link}>
+        <img src={image} alt={`${title} project`} class="project__img" />
+      </a>
+      <footer>
+        <a target="_blank" href={link}>
+          <Button outline="">
+            Demo <img src="/icons/send.svg" alt="send icon" />
+          </Button>
+        </a>
+        <a target="_blank" href={repo}>
+          <Button outline="outline">
+            Codigo <img src="/icons/code.svg" alt="code icon" />
+          </Button>
+        </a>
+      </footer>
+    </article>
+  ))
+}
+
+<style>
+  .project {
+    display: flex;
+    flex-direction: column;
+  }
+  h3 {
+    font-size: 28px;
+    color: var(--primaryColor);
+    margin-bottom: 4px;
+  }
+  p {
+    font-size: 22px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    text-wrap: balance;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    column-gap: 10px;
+  }
+  li img {
+    height: 20px;
+  }
+  .project__img {
+    aspect-ratio: 3/2;
+    width: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+  footer a {
+    text-decoration: none;
+  }
+  footer img {
+    height: 32px;
+  }
+</style>

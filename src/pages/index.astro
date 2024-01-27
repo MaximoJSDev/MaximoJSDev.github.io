@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import NavContact from "@/components/NavContact.astro";
+import Projects from "@/components/Projects.astro";
 ---
 
 <Layout title="Eduardo Maximiliano | Desarrollador Web & Diseñador UI/UX">
@@ -20,14 +21,133 @@ import NavContact from "@/components/NavContact.astro";
 			</article>
 			<img src="/images/logo.webp" alt="" />
 		</section>
+		<section id="proyectos">
+			<h2><img src="/icons/laptop.svg" alt="laptop icon" />Proyectos</h2>
+			<div class="proyectos__grid">
+				<Projects />
+			</div>
+		</section>
+		<section id="habilidades">
+			<h2><img src="/icons/tool.svg" alt="tool icon" /> Habilidades</h2>
+			<div class="habilidades__grid">
+				<article class="frontend">
+					<h3>Desarrollo Front-end</h3>
+					<p>Aplicaciones dinámicas, escalables y adaptables.</p>
+					<p>
+						Garantizo la accesibilidad de las aplicaciones a diversos
+						dispositivos.
+					</p>
+					<p>Experto en HTML, CSS, JavaScript y su entorno.</p>
+				</article>
+				<article class="ui-ux">
+					<h3>Diseño UI/UX</h3>
+					<p>
+						Diseño de interfaces concisas y coherentes, asegurando una
+						experiencia de usuario excepcional con interfaces intuitivas y
+						atractivas.
+					</p>
+				</article>
+				<article class="mantenimiento">
+					<h3>Mantenimiento Web</h3>
+					<p>
+						Mantenimiento de aplicaciones con integración de mejoras continuas y
+						renovación del hosting.
+					</p>
+				</article>
+			</div>
+		</section>
 	</main>
 </Layout>
 
 <style>
+	#habilidades {
+		margin-top: 75px;
+	}
+	.habilidades__grid {
+		display: grid;
+		grid-template-areas:
+			"frontend diseño diseño"
+			"frontend mantenimiento mantenimiento";
+		grid-template-columns: 380px 1fr;
+		gap: 30px;
+
+		article {
+			position: relative;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		article::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+		}
+		article * {
+			position: relative;
+			z-index: 11;
+		}
+		.frontend {
+			grid-area: frontend;
+			background-image: url("/images/frontend.webp");
+			background-position-y: center;
+			background-position-x: 30%;
+		}
+		.frontend h3 {
+			font-size: 24px;
+			margin-bottom: 40px;
+		}
+		.frontend p {
+			font-size: 22px;
+			margin-bottom: 22px;
+		}
+		.frontend::after {
+			background-color: rgba(33, 35, 55, 0.8);
+		}
+		.ui-ux {
+			grid-area: diseño;
+			background-image: url("/images/ui-ux.webp");
+			background-position-x: center;
+			background-position-y: 55%;
+		}
+		.ui-ux::after {
+			background-color: rgba(71, 66, 66, 0.85);
+		}
+		.mantenimiento {
+			grid-area: mantenimiento;
+			background-image: url("/images/backend.webp");
+			background-position: center;
+		}
+		.mantenimiento::after {
+			background-color: rgba(40, 20, 47, 0.67);
+		}
+		h3 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 22px;
+			margin-bottom: 22px;
+		}
+	}
+	.habilidades__grid article {
+		padding: 40px;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+	main {
+		width: 1060px;
+		margin-inline: auto;
+	}
 	#inicio {
 		display: flex;
 		align-items: center;
 		margin-top: 80px;
+		margin-bottom: 75px;
 	}
 	.inicio__article {
 		max-width: 660px;
@@ -50,8 +170,20 @@ import NavContact from "@/components/NavContact.astro";
 	#inicio img {
 		width: 180px;
 	}
-	main {
-		width: 1060px;
-		margin-inline: auto;
+	.proyectos__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+	}
+	h2 {
+		font-size: 32px;
+		display: flex;
+		align-items: center;
+		column-gap: 15px;
+		grid-column: span 2;
+		margin-bottom: 38px;
+	}
+	h2 img {
+		height: 32px;
 	}
 </style>
