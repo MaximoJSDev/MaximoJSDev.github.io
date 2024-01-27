@@ -8,6 +8,8 @@
 </nav>
 <style>
   nav {
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,9 +20,18 @@
     align-items: center;
     justify-content: center;
     column-gap: 40px;
-    padding: 20px 41px;
+    padding: 15px 35px;
     background-color: #232b3a;
     border-radius: 20px;
+    border: 1px solid rgb(255 255 255 / 11%);
+    backdrop-filter: blur(30px);
+    background-color: rgb(35 43 58 / 80%);
+    box-shadow:
+      0px 0.309px 3.641px 0px rgba(0, 0, 0, 0.08),
+      0px 0.782px 9.208px 0px rgba(0, 0, 0, 0.11),
+      0px 1.595px 18.784px 0px rgba(0, 0, 0, 0.14),
+      0px 3.285px 38.692px 0px rgba(0, 0, 0, 0.17),
+      0px 9px 106px 0px rgba(0, 0, 0, 0.25);
   }
   li {
     list-style: none;
