@@ -1,9 +1,11 @@
 ---
+import Habilidades from "@/components/Habilidades.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import NavContact from "@/components/NavContact.astro";
 import Projects from "@/components/Projects.astro";
 import Slider from "@/components/Slider.astro";
+import SobreMi from "@/components/SobreMi.astro";
 ---
 
 <Layout title="Eduardo Maximiliano | Desarrollador Web & Diseñador UI/UX">
@@ -20,42 +22,15 @@ import Slider from "@/components/Slider.astro";
 				</p>
 				<NavContact />
 			</article>
-			<img src="/images/logo.webp" alt="" />
+			<img src="/images/logo.webp" alt="logo" />
 		</section>
 		<section id="proyectos">
 			<h2><img src="/icons/laptop.svg" alt="laptop icon" />Proyectos</h2>
-			<div class="proyectos__grid">
-				<Projects />
-			</div>
+			<Projects />
 		</section>
 		<section id="habilidades">
 			<h2><img src="/icons/tool.svg" alt="tool icon" /> Habilidades</h2>
-			<div class="habilidades__grid">
-				<article class="frontend">
-					<h3>Desarrollo Front-end</h3>
-					<p>Aplicaciones dinámicas, escalables y adaptables.</p>
-					<p>
-						Garantizando la accesibilidad de las aplicaciones a diversos
-						dispositivos.
-					</p>
-					<p>Altamente competente en el dominio de las tecnologias web.</p>
-				</article>
-				<article class="ui-ux">
-					<h3>Diseño UI/UX</h3>
-					<p>
-						Diseño de interfaces concisas y coherentes, asegurando una
-						experiencia de usuario excepcional con interfaces intuitivas y
-						atractivas.
-					</p>
-				</article>
-				<article class="mantenimiento">
-					<h3>Mantenimiento Web</h3>
-					<p>
-						Mantenimiento de aplicaciones con integración de mejoras continuas y
-						renovación del hosting.
-					</p>
-				</article>
-			</div>
+			<Habilidades />
 		</section>
 		<section id="tecnologias">
 			<h2>
@@ -73,178 +48,30 @@ import Slider from "@/components/Slider.astro";
 				<img src="/icons/user.svg" alt="user" />
 				Sobre mí
 			</h2>
-			<article class="sobre-mi__article">
-				<div>
-					<p>
-						Me llamo Maximiliano, soy de Acapulco, México
-						<img
-							src="/images/mexico.png"
-							alt="Mexico flag"
-							class="sobre-mi__article__flag"
-						/>. Estudio la carrera de <strong
-							>Ingeniería en Sistemas Computacionales</strong
-						>, donde he adquirido conocimientos sólidos que me permiten crear <strong
-							>software de calidad</strong
-						>
-						en proyectos complejos.
-					</p>
-					<p>
-						Actualmente, me encuentro inmerso en el desarrollo de aplicaciones
-						web con JavaScript. Mi enfoque creativo y mi experiencia en el <strong
-							>diseño UX/UI</strong
-						> me permiten no solo crear <strong>aplicaciones funcionales</strong
-						>, sino también atractivas y amigables.
-					</p>
-					<p>
-						Me gusta <strong>llevar a cabo diseños complejos</strong> en código eficiente
-						y de alto rendimiento que garantizan la fidelidad del diseño, interacción
-						y funcionalidad excepcional al cliente.
-					</p>
-				</div>
-				<img src="/images/logo.webp" alt="logo" />
-			</article>
+			<SobreMi />
 		</section>
 	</main>
 </Layout>
-
 <style>
-	#sobre-mi {
-		margin-top: 75px;
-	}
-	.sobre-mi__article {
-		display: flex;
-		font-size: 22px;
-		justify-content: space-between;
-	}
-	.sobre-mi__article p {
-		margin-bottom: 26px;
-		max-width: 673px;
-	}
-	.sobre-mi__article strong {
-		color: var(--primaryColor);
-	}
-	.sobre-mi__article__flag {
-		width: 22px;
-		margin-bottom: 2px;
-		margin-left: 2px;
-	}
-	.sobre-mi__article > img {
-		margin-top: 20px;
-		width: 280px;
-		height: 280px;
-		border-radius: 50%;
-		box-shadow:
-			0px 0.249px 43.566px 0px rgba(113, 58, 226, 0.02),
-			0px 0.599px 64.237px 0px rgba(113, 58, 226, 0.02),
-			0px 1.127px 75.762px 0px rgba(113, 58, 226, 0.03),
-			0px 2.01px 90.279px 0px rgba(113, 58, 226, 0.04),
-			0px 3.76px 127.679px 0px rgba(113, 58, 226, 0.04),
-			0px 9px 290px 0px rgba(113, 58, 226, 0.06);
-	}
-	.slider-container {
-		background-color: #18202e;
-		padding: 40px 30px;
-		border-radius: 30px;
-	}
-	#tecnologias {
-		margin-top: 75px;
-	}
-	.tecnologias__text {
-		font-size: 22px;
-		margin-bottom: 28px;
-	}
-	#habilidades {
-		margin-top: 75px;
-	}
-	.habilidades__grid {
-		display: grid;
-		grid-template-areas:
-			"frontend diseño diseño"
-			"frontend mantenimiento mantenimiento";
-		grid-template-columns: 380px 1fr;
-		gap: 30px;
-
-		article {
-			position: relative;
-			background-size: cover;
-			background-repeat: no-repeat;
-		}
-		article::after {
-			content: "";
-			position: absolute;
-			inset: 0;
-			width: 100%;
-			height: 100%;
-		}
-		article * {
-			position: relative;
-			z-index: 11;
-		}
-		.frontend {
-			grid-area: frontend;
-			background-image: url("/images/frontend.webp");
-			background-position-y: center;
-			background-position-x: 30%;
-		}
-		.frontend h3 {
-			font-size: 24px;
-			margin-bottom: 40px;
-		}
-		.frontend p {
-			font-size: 22px;
-			margin-bottom: 22px;
-		}
-		.frontend::after {
-			background-color: rgba(33, 35, 55, 0.8);
-		}
-		.ui-ux {
-			grid-area: diseño;
-			background-image: url("/images/ui-ux.webp");
-			background-position-x: center;
-			background-position-y: 55%;
-		}
-		.ui-ux::after {
-			background-color: rgba(71, 66, 66, 0.85);
-		}
-		.mantenimiento {
-			grid-area: mantenimiento;
-			background-image: url("/images/backend.webp");
-			background-position: center;
-		}
-		.mantenimiento::after {
-			background-color: rgba(40, 20, 47, 0.67);
-		}
-		h3 {
-			font-size: 24px;
-			margin-bottom: 20px;
-		}
-		p {
-			font-size: 22px;
-			margin-bottom: 22px;
-		}
-	}
-	.habilidades__grid article {
-		padding: 40px;
-		border-radius: 10px;
-		overflow: hidden;
-	}
-
 	html {
 		scroll-behavior: smooth;
 	}
 	main {
-		width: 1060px;
+		max-width: 1100px;
+		padding-inline: 20px;
 		margin-inline: auto;
 	}
 	#inicio {
 		display: flex;
 		align-items: center;
-		margin-top: 80px;
-		margin-bottom: 75px;
+		flex-wrap: wrap-reverse;
+		margin-top: 100px;
+		column-gap: 110px;
+		row-gap: 24px;
 	}
 	.inicio__article {
+		width: 100%;
 		max-width: 660px;
-		margin-right: 110px;
 	}
 	.inicio__title {
 		font-size: 40px;
@@ -263,20 +90,87 @@ import Slider from "@/components/Slider.astro";
 	#inicio img {
 		width: 180px;
 	}
-	.proyectos__grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 60px;
-	}
+
 	h2 {
 		font-size: 32px;
 		display: flex;
 		align-items: center;
 		column-gap: 15px;
 		grid-column: span 2;
-		margin-bottom: 38px;
+		padding-bottom: 38px;
+		padding-top: 80px;
 	}
 	h2 img {
 		height: 32px;
+	}
+	.slider-container {
+		background-color: #18202e;
+		padding: 40px 30px;
+		border-radius: 30px;
+	}
+	.tecnologias__text {
+		font-size: 22px;
+		margin-bottom: 28px;
+	}
+</style>
+<style is:global>
+	@media (max-width: 850px) {
+		nav ul {
+			font-size: 14px !important;
+			column-gap: 15px !important;
+			padding-inline: 20px !important;
+		}
+		#inicio#inicio {
+			margin-top: 50px;
+		}
+		#proyectos {
+			.proyectos__grid {
+				grid-template-columns: 1fr;
+
+				.project {
+					max-width: none;
+				}
+				p {
+					text-wrap: pretty;
+				}
+			}
+		}
+		#habilidades .habilidades__grid {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"frontend"
+				"diseño"
+				"mantenimiento";
+		}
+		#tecnologias {
+			.slider-container {
+				padding: 25px 10px;
+			}
+			.slide {
+				width: 100px;
+			}
+			.slide img {
+				height: 45px;
+			}
+		}
+		#sobre-mi {
+			.sobre-mi__article {
+				flex-wrap: wrap-reverse;
+				justify-content: center;
+				row-gap: 32px;
+			}
+			.sobre-mi__article div {
+				width: 100%;
+			}
+			.sobre-mi__article p {
+				max-width: none;
+			}
+		}
+		button.btn {
+			font-size: 18px !important;
+		}
+		button.btn img {
+			height: 28px !important;
+		}
 	}
 </style>

@@ -1,0 +1,127 @@
+<div class="habilidades__grid">
+  <article class="habilidad frontend">
+    <h3>Desarrollo Front-end</h3>
+    <p>Aplicaciones dinámicas, escalables y adaptables.</p>
+    <p>
+      Garantizando la accesibilidad de las aplicaciones a diversos dispositivos.
+    </p>
+    <p>Altamente competente en el dominio de las tecnologias web.</p>
+  </article>
+  <article class="habilidad ui-ux">
+    <h3>Diseño UI/UX</h3>
+    <p>
+      Diseño de interfaces concisas y coherentes, asegurando una experiencia de
+      usuario excepcional con interfaces intuitivas y atractivas.
+    </p>
+  </article>
+  <article class="habilidad mantenimiento">
+    <h3>Mantenimiento Web</h3>
+    <p>
+      Mantenimiento de aplicaciones con integración de mejoras continuas y
+      renovación del hosting.
+    </p>
+  </article>
+</div>
+<script>
+  const updateCursor = ({ x, y }) => {
+    document.documentElement.style.setProperty("--x", x);
+    document.documentElement.style.setProperty("--y", y);
+  };
+  document
+    .getElementById("habilidades")
+    .addEventListener("pointermove", updateCursor);
+</script>
+<style>
+  .habilidades__grid {
+    display: grid;
+    grid-template-areas:
+      "frontend diseño diseño"
+      "frontend mantenimiento mantenimiento";
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+
+    article {
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    article::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    article * {
+      position: relative;
+      z-index: 11;
+    }
+    .frontend {
+      grid-area: frontend;
+      background-image: url("/images/frontend.webp");
+      background-position-y: center;
+      background-position-x: 30%;
+    }
+    .frontend h3 {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+    .frontend p {
+      font-size: 22px;
+      margin-bottom: 22px;
+    }
+    .frontend::after {
+      background-color: rgba(33, 35, 55, 0.85);
+    }
+    .ui-ux {
+      grid-area: diseño;
+      background-image: url("/images/ui-ux.webp");
+      background-position-x: center;
+      background-position-y: 55%;
+    }
+    .ui-ux::after {
+      background-color: rgba(71, 66, 66, 0.85);
+    }
+    .mantenimiento {
+      grid-area: mantenimiento;
+      background-image: url("/images/backend.webp");
+      background-position: center;
+    }
+    .mantenimiento::after {
+      background-color: rgba(40, 20, 47, 0.67);
+    }
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 22px;
+      margin-bottom: 22px;
+    }
+  }
+  .habilidades__grid article {
+    padding: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .habilidad:hover {
+    --active: 1;
+  }
+  .habilidad::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      hsla(0, 0%, 100%, 0.1),
+      transparent 12vmin
+    );
+    background-attachment: fixed;
+    opacity: var(--active, 0);
+    z-index: 11;
+  }
+  .habilidad {
+    position: relative;
+    cursor: default;
+  }
+</style>

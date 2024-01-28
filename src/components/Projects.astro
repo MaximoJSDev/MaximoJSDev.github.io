@@ -72,42 +72,50 @@ const PROJECTS = [
 ];
 ---
 
-{
-  PROJECTS.map(({ title, description, link, repo, image, tags }) => (
-    <article class="project">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <ul>
-        {tags.map(({ name, icon, color, bg }) => (
-          <li style={{ color: `${color}`, backgroundColor: `${bg}` }}>
-            <img src={`/icons/${icon}.svg`} alt={`${icon} icon`} />
-            {name}
-          </li>
-        ))}
-      </ul>
-      <a target="_blank" href={link}>
-        <img src={image} alt={`${title} project`} class="project__img" />
-      </a>
-      <footer>
+<div class="proyectos__grid">
+  {
+    PROJECTS.map(({ title, description, link, repo, image, tags }) => (
+      <article class="project">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <ul>
+          {tags.map(({ name, icon, color, bg }) => (
+            <li style={{ color: `${color}`, backgroundColor: `${bg}` }}>
+              <img src={`/icons/${icon}.svg`} alt={`${icon} icon`} />
+              {name}
+            </li>
+          ))}
+        </ul>
         <a target="_blank" href={link}>
-          <Button outline="">
-            Demo <img src="/icons/send.svg" alt="send icon" />
-          </Button>
+          <img src={image} alt={`${title} project`} class="project__img" />
         </a>
-        <a target="_blank" href={repo}>
-          <Button outline="outline">
-            Codigo <img src="/icons/code.svg" alt="code icon" />
-          </Button>
-        </a>
-      </footer>
-    </article>
-  ))
-}
-
+        <footer>
+          <a target="_blank" href={link}>
+            <Button outline="">
+              Demo <img src="/icons/send.svg" alt="send icon" />
+            </Button>
+          </a>
+          <a target="_blank" href={repo}>
+            <Button outline="outline">
+              Codigo <img src="/icons/code.svg" alt="code icon" />
+            </Button>
+          </a>
+        </footer>
+      </article>
+    ))
+  }
+</div>
 <style>
+  .proyectos__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 60px;
+  }
   .project {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
   }
   h3 {
     font-size: 28px;
@@ -139,7 +147,7 @@ const PROJECTS = [
   }
   .project__img {
     aspect-ratio: 3/2;
-    width: 500px;
+    width: 100%;
     border-radius: 10px;
     object-fit: cover;
   }
