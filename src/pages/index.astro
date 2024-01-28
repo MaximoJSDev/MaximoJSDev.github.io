@@ -68,10 +68,79 @@ import Slider from "@/components/Slider.astro";
 				<Slider />
 			</div>
 		</section>
+		<section id="sobre-mi">
+			<h2>
+				<img src="/icons/user.svg" alt="user" />
+				Sobre mí
+			</h2>
+			<article class="sobre-mi__article">
+				<div>
+					<p>
+						Me llamo Maximiliano, soy de Acapulco, México
+						<img
+							src="/images/mexico.png"
+							alt="Mexico flag"
+							class="sobre-mi__article__flag"
+						/>. Estudio la carrera de <strong
+							>Ingeniería en Sistemas Computacionales</strong
+						>, donde he adquirido conocimientos sólidos que me permiten crear <strong
+							>software de calidad</strong
+						>
+						en proyectos complejos.
+					</p>
+					<p>
+						Actualmente, me encuentro inmerso en el desarrollo de aplicaciones
+						web con JavaScript. Mi enfoque creativo y mi experiencia en el <strong
+							>diseño UX/UI</strong
+						> me permiten no solo crear <strong>aplicaciones funcionales</strong
+						>, sino también atractivas y amigables.
+					</p>
+					<p>
+						Me gusta <strong>llevar a cabo diseños complejos</strong> en código eficiente
+						y de alto rendimiento que garantizan la fidelidad del diseño, interacción
+						y funcionalidad excepcional al cliente.
+					</p>
+				</div>
+				<img src="/images/logo.webp" alt="logo" />
+			</article>
+		</section>
 	</main>
 </Layout>
 
 <style>
+	#sobre-mi {
+		margin-top: 75px;
+	}
+	.sobre-mi__article {
+		display: flex;
+		font-size: 22px;
+		justify-content: space-between;
+	}
+	.sobre-mi__article p {
+		margin-bottom: 26px;
+		max-width: 673px;
+	}
+	.sobre-mi__article strong {
+		color: var(--primaryColor);
+	}
+	.sobre-mi__article__flag {
+		width: 22px;
+		margin-bottom: 2px;
+		margin-left: 2px;
+	}
+	.sobre-mi__article > img {
+		margin-top: 20px;
+		width: 280px;
+		height: 280px;
+		border-radius: 50%;
+		box-shadow:
+			0px 0.249px 43.566px 0px rgba(113, 58, 226, 0.02),
+			0px 0.599px 64.237px 0px rgba(113, 58, 226, 0.02),
+			0px 1.127px 75.762px 0px rgba(113, 58, 226, 0.03),
+			0px 2.01px 90.279px 0px rgba(113, 58, 226, 0.04),
+			0px 3.76px 127.679px 0px rgba(113, 58, 226, 0.04),
+			0px 9px 290px 0px rgba(113, 58, 226, 0.06);
+	}
 	.slider-container {
 		background-color: #18202e;
 		padding: 40px 30px;
