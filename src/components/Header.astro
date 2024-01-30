@@ -1,11 +1,43 @@
-<nav>
+<nav id="nav">
   <ul>
-    <li><a href="/#proyectos">Proyectos</a></li>
-    <li><a href="/#habilidades">Habilidades</a></li>
-    <li><a href="/#sobre-mi">Sobre mi</a></li>
-    <li><a href="/#contacto">Contacto</a></li>
+    <li><a aria-label="proyectos" href="/#proyectos">Proyectos</a></li>
+    <li><a aria-label="habilidades" href="/#habilidades">Habilidades</a></li>
+    <li><a aria-label="sobre-mi" href="/#sobre-mi">Sobre mi</a></li>
+    <li><a aria-label="contacto" href="/#contacto">Contacto</a></li>
   </ul>
 </nav>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("main > section");
+    const navItems = document.querySelectorAll("nav a");
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("link-active");
+            } else {
+              item.classList.remove("link-active");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.25,
+    });
+
+    sections.forEach((section) => observer.observe(section));
+
+    // Cleanup function
+    window.onunload = () => observer.disconnect();
+  });
+</script>
 <style>
   nav {
     position: sticky;
@@ -40,5 +72,8 @@
   a {
     color: #fff;
     text-decoration: none;
+  }
+  .link-active {
+    color: var(--primaryColor);
   }
 </style>

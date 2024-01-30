@@ -21,10 +21,14 @@ const { outline } = Astro.props;
     font-size: 20px;
     padding: 8px 30px;
     background-color: var(--primaryColor);
+    transition: opacity 0.2s;
     cursor: pointer;
   }
   .btn.outline {
     background-color: #18202e;
     border: 1px solid #006dff;
+  }
+  .btn:hover {
+    opacity: 0.7;
   }
 </style>
